@@ -26,11 +26,10 @@ python -m http.server 8765 --directory sageway
 
 | 위치 | 항목 |
 | --- | --- |
-| 회사소개 → 회사 명세서 | 대표자명, 설립연도, 주소, 사업자등록번호 (상단 '기재 예정' 도장 `.stamp--sq` 도 함께 삭제) |
+| 회사소개 → 회사 명세서 | 설립연도 (채운 뒤 상단 '기재 예정' 도장 `.stamp--sq` 도 함께 삭제) |
 | 판촉물 → 제작 사양서 | 문서번호 `SW-GD-[0000]`, 단가 |
-| 문의 → 연락처 | 전화, 이메일 (선택 가능한 텍스트이며 '복사' 버튼이 붙어 있습니다) |
-| 문의 → 개인정보 동의 | `[개인정보처리방침 링크 대체]` 를 실제 링크로 |
-| 푸터 → 회사 정보 | 대표, 사업자등록번호, 통신판매업신고, 주소, 전화, 이메일, 개인정보처리방침·이용약관 링크 |
+| 문의 → 개인정보 동의 | 수집 고지 문구의 보유 기간(현재 '문의 처리 후 1년') 확인 |
+| 푸터 → 회사 정보 | 통신판매업신고번호, 개인정보처리방침·이용약관 링크 |
 | `<head>` | `<title>`, `<meta name="description">` |
 
 ## 예시 데이터 표기
@@ -40,8 +39,12 @@ python -m http.server 8765 --directory sageway
 
 ## 문의 폼 연결
 
-현재 폼은 백엔드 없이 동작하는 데모입니다. 검증을 통과하면 화면 안에 '접수증'을 그리고 실제 전송은 하지 않습니다.
-실제 전송을 붙이려면 `main.js` 의 `form.addEventListener('submit', …)` 안, `renderReceipt(...)` 를 호출하기 직전에 `fetch()` 로 서버(또는 Formspree, Google Apps Script 같은 폼 서비스)에 보내고 성공 응답 후 접수증을 표시하도록 바꾸면 됩니다. 접수증의 "이 페이지는 데모이며 실제 전송은 도입 시 연결됩니다." 문구도 그때 삭제하세요.
+문의 폼은 [FormSubmit](https://formsubmit.co)을 통해 `sageway9@gmail.com` 으로 전송됩니다(별도 서버 없음).
+
+- JS가 켜져 있으면 `main.js` 가 `https://formsubmit.co/ajax/sageway9@gmail.com` 으로 JSON 을 보내고, 성공 응답을 받은 뒤에만 접수증을 표시합니다. 실패하면 폼 위에 오류 문구를 띄웁니다.
+- JS가 꺼져 있으면 `<form action="https://formsubmit.co/sageway9@gmail.com" method="post">` 로 일반 전송됩니다.
+- **처음 한 번은 활성화가 필요합니다.** 첫 문의가 들어오면 FormSubmit 이 `sageway9@gmail.com` 으로 확인 메일을 보내고, 메일 안의 활성화 버튼을 누른 뒤부터 문의가 전달됩니다.
+- 받는 주소를 바꾸려면 `index.html` 의 form `action` 과 `main.js` 의 `INQUIRY_EMAIL` 을 함께 바꿉니다.
 
 ## 디자인 시스템 메모
 

@@ -279,7 +279,7 @@
     function nowStamp() {
       var d = new Date();
       return {
-        num: 'SW-' + d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()) + '-001',
+        num: 'SW-' + d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()) + '-' + pad(d.getHours()) + pad(d.getMinutes()),
         at: d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes())
       };
     }
@@ -333,8 +333,8 @@
         '<text class="stamp__core" x="60" y="67" text-anchor="middle">접수</text>';
       receipt.appendChild(svg);
 
-      var note = el('p', 'receipt__note', '이 페이지는 데모이며 실제 전송은 도입 시 연결됩니다. ');
-      var reset = el('button', 'text-link', '다시 작성');
+      var note = el('p', 'receipt__note', '추가로 전하실 내용은 ' + INQUIRY_EMAIL + '으로 보내 주세요. ');
+      var reset = el('button', 'text-link', '새 문의 작성');
       reset.type = 'button';
       reset.id = 'receipt-reset';
       note.appendChild(reset);
@@ -367,6 +367,20 @@
 
     /* JS가 있으면 자체 검증을 쓰고, 없으면 브라우저 기본 required 검증이 동작합니다. */
     form.noValidate = true;
+
+    /* 실제 전송: FormSubmit AJAX 엔드포인트 → 문의 메일함 */
+    var INQUIRY_EMAIL = 'sageway9@gmail.com';
+    var INQUIRY_ENDPOINT = 'https://formsubmit.co/ajax/' + INQUIRY_EMAIL;
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var submitLabel = submitBtn ? submitBtn.textContent : '';
+    var sending = false;
+    function setSending(on) {
+      sending = on;
+      if (!submitBtn) return;
+      submitBtn.disabled = on;
+      submitBtn.textContent = on ? '보내는 중…' : submitLabel;
+      form.setAttribute('aria-busy', on ? 'true' : 'false');
+    }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var errors = validate();
@@ -375,15 +389,44 @@
         errors[0].focus();
         return;
       }
+      if (sending) return;
       if (summary) summary.textContent = '';
       var services = [];
       var checked = form.querySelectorAll('input[name="service"]:checked');
       for (var i = 0; i < checked.length; i++) services.push(checked[i].value);
-      renderReceipt({
+      var data = {
         services: services,
         company: form.company.value.trim(),
         person: form.person.value.trim(),
         email: form.email.value.trim()
+      };
+      var payload = {
+        _subject: '[세이지웨이] 홈페이지 문의 · ' + data.company,
+        _template: 'table',
+        _honey: form._honey ? form._honey.value : '',
+        '관심 서비스': services.join(', '),
+        '회사명': data.company,
+        '담당자': data.person,
+        email: data.email,
+        '연락처': form.tel.value.trim(),
+        '문의 내용': form.message.value.trim()
+      };
+      setSending(true);
+      fetch(INQUIRY_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (body) {
+          if (!res.ok || body.success === false || body.success === 'false') throw new Error(body.message || res.status);
+        });
+      }).then(function () {
+        setSending(false);
+        renderReceipt(data);
+      }).catch(function () {
+        setSending(false);
+        if (summary) summary.textContent = '전송하지 못했습니다. 잠시 후 다시 시도하시거나 ' + INQUIRY_EMAIL + '으로 메일을 보내 주세요.';
+        if (submitBtn) submitBtn.focus();
       });
     });
 

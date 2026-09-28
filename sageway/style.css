@@ -826,3 +826,7 @@ fieldset.field legend { padding: 0; margin-bottom: 8px; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; transition-delay: 0ms !important; }
 }
+
+/* 개인정보 수집 고지 · 전송 중 버튼 */
+.field--consent .consent__note { width: 100%; margin: 0; }
+.btn[disabled] { opacity: .6; cursor: progress; }

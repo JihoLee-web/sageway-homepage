@@ -192,10 +192,10 @@
             <caption class="ledger__cap"><span class="mono">회사 명세서</span><span class="stamp--sq">기재 예정</span></caption>
             <tbody>
               <tr><th scope="row">상호</th><td>세이지웨이 (SAGEWAY)</td></tr>
-              <tr><th scope="row">대표</th><td><span class="ph">[대표자명]</span></td></tr>
+              <tr><th scope="row">대표</th><td>주희수</td></tr>
               <tr><th scope="row">설립</th><td><span class="ph">[설립연도]</span></td></tr>
-              <tr><th scope="row">소재지</th><td><span class="ph">[주소]</span></td></tr>
-              <tr><th scope="row">사업자등록번호</th><td><span class="ph mono">[000-00-00000]</span></td></tr>
+              <tr><th scope="row">소재지</th><td>서울특별시 중구 퇴계로 450, 5층 505-6호 (신당동, 신영빌딩)</td></tr>
+              <tr><th scope="row">사업자등록번호</th><td class="mono">862-81-03082</td></tr>
               <tr><th scope="row">사업영역</th><td>정산자동화 / 쇼핑몰 구축 / 판촉물·기념품 제작</td></tr>
             </tbody>
           </table>
@@ -784,16 +784,19 @@
       <p class="eyebrow">문의</p>
       <h2 class="h2" id="contact-title">지금 하시는 고민을 그대로 적어 주세요.</h2>
       <p class="body body--sm">정산이 안 맞는 이유를 모르셔도, 쇼핑몰이 처음이셔도, 기념품 수량을 아직 정하지 않으셨어도 괜찮습니다. 운영 채널 목록, 오픈 목표일, 원하는 품목과 수량처럼 지금 알고 계신 것만 적어 주시면 영업일 기준 1일 안에 담당자가 회신드립니다.</p>
-      <!-- 연락처: 소유주가 대괄호 값 교체 (링크가 아닌 선택 가능한 텍스트) -->
+      <!-- 연락처: 선택 가능한 텍스트 + 복사 버튼 -->
       <dl class="contact-info">
-        <div><dt>전화</dt><dd><span class="copy-target ph mono nowrap" id="tel-value">[02-0000-0000]</span> <button type="button" class="copy-btn" data-copy="#tel-value">복사</button></dd></div>
-        <div><dt>이메일</dt><dd><span class="copy-target ph mono" id="mail-value">[contact@<wbr>sageway.example]</span> <button type="button" class="copy-btn" data-copy="#mail-value">복사</button></dd></div>
+        <div><dt>이메일</dt><dd><span class="copy-target mono" id="mail-value">sageway9@<wbr>gmail.com</span> <button type="button" class="copy-btn" data-copy="#mail-value">복사</button></dd></div>
         <div><dt>상담 시간</dt><dd>평일 <span class="mono">09:00–18:00</span></dd></div>
       </dl>
       <span class="sr-only" aria-live="polite" id="copy-live"></span>
     </header>
     <div class="section__body">
-      <form class="inquiry" id="inquiry" method="post" action="#contact">
+      <form class="inquiry" id="inquiry" method="post" action="https://formsubmit.co/sageway9@gmail.com" accept-charset="UTF-8">
+        <!-- 폼 전송: FormSubmit(formsubmit.co) → sageway9@gmail.com. JS가 있으면 main.js 가 AJAX 로 보냅니다. -->
+        <input type="hidden" name="_subject" value="[세이지웨이] 홈페이지 문의">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" hidden tabindex="-1" autocomplete="off">
         <div class="form__summary" id="form-summary" aria-live="polite"></div>
 
         <fieldset class="field field--full" id="field-service" aria-describedby="err-service">
@@ -833,7 +836,7 @@
         </div>
         <div class="field field--full field--consent">
           <label class="chip chip--plain"><input type="checkbox" name="consent" id="consent" required aria-describedby="err-consent"><span class="chip__box" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span><span>개인정보 수집·이용에 동의합니다. <span class="req">(필수)</span></span></label>
-          <span class="ph small">[개인정보처리방침 링크 대체]</span>
+          <p class="caption consent__note">수집 항목: 회사명, 담당자 성함, 이메일, 연락처, 문의 내용 · 이용 목적: 문의 확인과 회신 · 보유 기간: 문의 처리 후 1년 뒤 파기</p>
           <p class="field__error" id="err-consent" hidden>개인정보 수집·이용에 동의해 주세요.</p>
         </div>
         <div class="field field--full field--submit">
@@ -871,15 +874,14 @@
       </div>
       <div>
         <p class="label">회사 정보</p>
-        <!-- 회사 정보: 소유주가 대괄호 값 교체 -->
+        <!-- 회사 정보: 남은 대괄호 값은 소유주가 교체 -->
         <dl class="site-footer__info">
           <div><dt>상호</dt><dd>세이지웨이</dd></div>
-          <div><dt>대표</dt><dd><span class="ph">[대표자명]</span></dd></div>
-          <div><dt>사업자등록번호</dt><dd><span class="ph mono">[000-00-00000]</span></dd></div>
+          <div><dt>대표</dt><dd>주희수</dd></div>
+          <div><dt>사업자등록번호</dt><dd class="mono">862-81-03082</dd></div>
           <div><dt>통신판매업신고</dt><dd><span class="ph">[통신판매업신고번호]</span></dd></div>
-          <div><dt>주소</dt><dd><span class="ph">[주소]</span></dd></div>
-          <div><dt>전화</dt><dd><span class="ph mono">[02-0000-0000]</span></dd></div>
-          <div><dt>이메일</dt><dd><span class="ph mono">[contact@<wbr>sageway.example]</span></dd></div>
+          <div><dt>주소</dt><dd>서울특별시 중구 퇴계로 450, 5층 505-6호 (신당동, 신영빌딩)</dd></div>
+          <div><dt>이메일</dt><dd class="mono">sageway9@<wbr>gmail.com</dd></div>
         </dl>
       </div>
       <div>
