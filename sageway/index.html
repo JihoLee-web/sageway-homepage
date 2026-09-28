@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>세이지웨이 SAGEWAY | 온라인몰 정산자동화 · 쇼핑몰 구축 · 판촉물 제작</title>
+<meta name="description" content="세이지웨이는 온라인몰 정산자동화, 국내·해외 온라인 쇼핑몰 구축, 판촉물·기념품 기획 및 제작을 한 곳에서 맡는 회사입니다. 채널마다 다른 정산을 건별로 맞추고, 팔리는 매장을 열고, 브랜드를 손에 쥐어 드립니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@800;900&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+/* 저장된 테마를 렌더 전에 적용해 깜빡임을 막습니다. */
+(function () { try { var t = localStorage.getItem('sw-theme'); if (t === 'light' || t === 'dark') { document.documentElement.setAttribute('data-theme', t); } } catch (e) {} })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<header class="site-header" id="top">
+  <div class="container site-header__inner">
+    <a class="wordmark" href="#top" aria-label="세이지웨이 처음으로">
+      <span class="wordmark__latin">SAGEWAY</span>
+      <span class="wordmark__ko">세이지웨이</span>
+    </a>
+    <span class="site-header__section" aria-hidden="true" data-current-section></span>
+    <nav class="site-nav" aria-label="주요 메뉴">
+      <a href="#about">회사소개</a>
+      <a href="#settlement">정산자동화</a>
+      <a href="#store">쇼핑몰 구축</a>
+      <a href="#goods">판촉물·기념품</a>
+      <a href="#contact">문의</a>
+    </nav>
+    <div class="site-header__actions">
+      <div class="theme-switch" role="group" aria-label="화면 테마">
+        <button type="button" data-theme-set="light" aria-pressed="false" aria-label="밝은 테마로 전환">밝게</button>
+        <button type="button" data-theme-set="dark" aria-pressed="false" aria-label="어두운 테마로 전환">어둡게</button>
+      </div>
+      <a class="btn btn--primary btn--sm" href="#contact">문의하기</a>
+      <button type="button" class="toc-open" aria-haspopup="dialog" aria-controls="toc">목차</button>
+    </div>
+  </div>
+</header>
+
+<dialog class="toc" id="toc" aria-label="목차">
+  <div class="toc__inner">
+    <div class="toc__head">
+      <span class="wordmark__latin">SAGEWAY</span>
+      <button type="button" class="toc__close" data-toc-close>닫기</button>
+    </div>
+    <nav aria-label="목차 메뉴">
+      <ul class="toc__list">
+        <li><a href="#about" data-toc-link>회사소개</a></li>
+        <li><a href="#settlement" data-toc-link>정산자동화</a></li>
+        <li><a href="#store" data-toc-link>쇼핑몰 구축</a></li>
+        <li><a href="#goods" data-toc-link>판촉물·기념품</a></li>
+        <li><a href="#cases" data-toc-link>사례</a></li>
+        <li><a href="#faq" data-toc-link>자주 묻는 질문</a></li>
+        <li><a href="#contact" data-toc-link>문의</a></li>
+      </ul>
+    </nav>
+    <div class="toc__foot">
+      <div class="theme-switch" role="group" aria-label="화면 테마">
+        <button type="button" data-theme-set="light" aria-pressed="false" aria-label="밝은 테마로 전환">밝게</button>
+        <button type="button" data-theme-set="dark" aria-pressed="false" aria-label="어두운 테마로 전환">어둡게</button>
+      </div>
+      <a class="btn btn--primary" href="#contact" data-toc-link>문의하기</a>
+    </div>
+  </div>
+</dialog>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero" aria-labelledby="hero-title" data-section-title="처음">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">정산자동화 · 쇼핑몰 구축 · 판촉물·기념품 제작</p>
+      <h1 class="h1" id="hero-title">정산은 맞추고,<br>쇼핑몰은 짓고,<br>굿즈는 만듭니다.</h1>
+      <p class="lead">세이지웨이는 온라인몰 정산자동화, 국내·해외 쇼핑몰 구축, 판촉물·기념품 기획·제작을 한 곳에서 맡습니다. 채널마다 다른 정산을 건별로 맞추고, 팔리는 매장을 열고, 브랜드를 고객과 임직원의 손에 쥐어 드립니다.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#contact">문의하기</a>
+        <a class="btn btn--ghost" href="#services">서비스 살펴보기</a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="table-frame">
+        <svg class="stamp stamp--hero" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+          <circle cx="60" cy="60" r="56" class="stamp__ring-outer"/>
+          <circle cx="60" cy="60" r="47" class="stamp__ring-inner"/>
+          <defs><path id="ring-hero" d="M60,60 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs>
+          <text class="stamp__ringtext"><textPath href="#ring-hero">SAGEWAY · RECONCILED · SAGEWAY · RECONCILED</textPath></text>
+          <text class="stamp__core" x="60" y="67" text-anchor="middle">대사 완료</text>
+        </svg>
+        <table class="ledger ledger--bridge" id="bridge-table">
+          <caption class="ledger__cap"><span class="mono">정산 대사표 · 2026-09 · 예시</span></caption>
+          <thead>
+            <tr>
+              <th scope="col">채널</th>
+              <th scope="col">주문번호</th>
+              <th scope="col" class="num">판매금액</th>
+              <th scope="col" class="th-bridge"><span class="sr-only">매칭 상태</span></th>
+              <th scope="col">정산일</th>
+              <th scope="col" class="num">수수료</th>
+              <th scope="col" class="num">정산금액</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="--i:0"><td class="ch">쿠팡</td><td class="mono">C-240912-0417</td><td class="num">₩58,000</td><td class="bridge"><span class="bridge__label">매칭</span></td><td class="mono">09-19</td><td class="num">₩6,380</td><td class="num">₩51,620</td></tr>
+            <tr style="--i:1"><td class="ch">스마트스토어</td><td class="mono">N-240912-2231</td><td class="num">₩42,000</td><td class="bridge"><span class="bridge__label">매칭</span></td><td class="mono">09-16</td><td class="num">₩2,310</td><td class="num">₩39,690</td></tr>
+            <tr style="--i:2"><td class="ch">11번가</td><td class="mono">E-240913-0088</td><td class="num">₩129,000</td><td class="bridge"><span class="bridge__label">매칭</span></td><td class="mono">09-20</td><td class="num">₩15,480</td><td class="num">₩113,520</td></tr>
+            <tr style="--i:3"><td class="ch">G마켓</td><td class="mono">G-240913-5120</td><td class="num">₩36,500</td><td class="bridge"><span class="bridge__label">매칭</span></td><td class="mono">09-22</td><td class="num">₩4,745</td><td class="num">₩31,755</td></tr>
+            <tr style="--i:4" class="is-mismatch"><td class="ch">카카오</td><td class="mono">K-240914-0906</td><td class="num">₩89,000</td><td class="bridge"><span class="bridge__label">불일치 −₩1,240</span></td><td class="mono">09-21</td><td class="num">₩9,790<small class="policy">정책 ₩8,550</small></td><td class="num">₩79,210</td></tr>
+            <tr style="--i:5"><td class="ch">무신사</td><td class="mono">M-240914-3377</td><td class="num">₩64,000</td><td class="bridge"><span class="bridge__label">매칭</span></td><td class="mono">09-25</td><td class="num">₩19,200</td><td class="num">₩44,800</td></tr>
+            <tr style="--i:6"><td class="ch">쿠팡</td><td class="mono">C-240915-1102</td><td class="num">₩23,000</td><td class="bridge"><span class="bridge__label">매칭</span></td><td class="mono">09-22</td><td class="num">₩2,530</td><td class="num">₩20,470</td></tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="4" class="tfoot__sum">대사 7/7 · 이상 1건 표시</td>
+              <td colspan="3" class="tfoot__total"><span class="tfoot__label">미확인 차액</span><span class="tfoot__zero mono">₩0</span></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="services" id="services" aria-label="사업 영역">
+      <a class="ledger-row service-row" href="#settlement">
+        <span class="service-row__name">온라인몰 정산자동화</span>
+        <span class="service-row__desc">채널 정산 데이터를 자동 수집하고 주문과 건별로 매칭해 수수료·미정산을 검증합니다.</span>
+        <span class="service-row__first"><span class="service-row__label">첫 산출물</span>현황 진단 보고서 (2주)</span>
+        <span class="service-row__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="ledger-row service-row" href="#store">
+        <span class="service-row__name">온라인 쇼핑몰 구축 (국내·해외)</span>
+        <span class="service-row__desc">카페24·고도몰·아임웹·자체 구축, Shopify 구축과 아마존·라쿠텐·쇼피 입점까지 운영 가능한 상태로 납품합니다.</span>
+        <span class="service-row__first"><span class="service-row__label">첫 산출물</span>플랫폼 제안서와 일정표</span>
+        <span class="service-row__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="ledger-row service-row" href="#goods">
+        <span class="service-row__name">판촉물·기념품 기획 및 제작</span>
+        <span class="service-row__desc">기획, 디자인, 샘플, 생산, 납품까지 한 담당자가 맡습니다.</span>
+        <span class="service-row__first"><span class="service-row__label">첫 산출물</span>품목 3안과 견적서</span>
+        <span class="service-row__arrow" aria-hidden="true">→</span>
+      </a>
+    </nav>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="section" id="about" aria-labelledby="about-title" data-section-title="회사소개">
+  <div class="container section__grid">
+    <header class="section__head">
+      <p class="eyebrow">회사소개</p>
+      <h2 class="h2" id="about-title">판매 뒤에 남는 일을 정확하게 처리합니다.</h2>
+    </header>
+    <div class="section__body">
+      <p class="body">온라인 판매는 주문이 끝이 아닙니다. 채널별 정산을 맞추고, 새 시장에 매장을 열고, 고객과 임직원에게 브랜드를 전하는 일까지 이어집니다. 세이지웨이는 이 세 가지 업무를 하나의 기준, 정확함으로 처리합니다.</p>
+      <p class="body">개발자, 이커머스 운영 경험자, 제작 실무자가 한 회사 안에서 같은 문서를 보며 일합니다. 정산 데이터가 쇼핑몰 설계의 기준이 되고, 쇼핑몰 운영 경험이 판촉물 기획에 반영됩니다.</p>
+
+      <h3 class="h4 block-title">함께 일하는 분들</h3>
+      <div class="ledger-rows">
+        <div class="ledger-row ledger-row--2">
+          <span class="ledger-row__title">여러 채널에서 판매 중인 셀러·브랜드</span>
+          <span class="ledger-row__desc">정산 마감이 매달 반복되는 숙제인 분들</span>
+        </div>
+        <div class="ledger-row ledger-row--2">
+          <span class="ledger-row__title">기업 마케팅·인사팀</span>
+          <span class="ledger-row__desc">행사와 시즌마다 기념품과 선물을 준비해야 하는 분들</span>
+        </div>
+        <div class="ledger-row ledger-row--2">
+          <span class="ledger-row__title">구매·조달 담당자</span>
+          <span class="ledger-row__desc">견적, 납기, 품질을 한 번에 검토하셔야 하는 분들</span>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <h3 class="h4 block-title">일하는 원칙</h3>
+          <ul class="principles">
+            <li><span class="bridge-mini" aria-hidden="true"></span><div><strong>숫자는 건별로 확인합니다.</strong><span>합계가 맞아도 한 건이 틀리면 틀린 것입니다.</span></div></li>
+            <li><span class="bridge-mini" aria-hidden="true"></span><div><strong>견적은 항목별로 드립니다.</strong><span>무엇에 얼마가 드는지 감추지 않습니다.</span></div></li>
+            <li><span class="bridge-mini" aria-hidden="true"></span><div><strong>담당자가 바뀌지 않습니다.</strong><span>처음 상담한 사람이 납품까지 책임집니다.</span></div></li>
+          </ul>
+        </div>
+        <div>
+          <!-- 회사 명세서: 소유주가 대괄호 값 교체 -->
+          <table class="ledger ledger--kv">
+            <caption class="ledger__cap"><span class="mono">회사 명세서</span><span class="stamp--sq">기재 예정</span></caption>
+            <tbody>
+              <tr><th scope="row">상호</th><td>세이지웨이 (SAGEWAY)</td></tr>
+              <tr><th scope="row">대표</th><td><span class="ph">[대표자명]</span></td></tr>
+              <tr><th scope="row">설립</th><td><span class="ph">[설립연도]</span></td></tr>
+              <tr><th scope="row">소재지</th><td><span class="ph">[주소]</span></td></tr>
+              <tr><th scope="row">사업자등록번호</th><td><span class="ph mono">[000-00-00000]</span></td></tr>
+              <tr><th scope="row">사업영역</th><td>정산자동화 / 쇼핑몰 구축 / 판촉물·기념품 제작</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SETTLEMENT ===================== -->
+<section class="section" id="settlement" aria-labelledby="settlement-title" data-section-title="정산자동화">
+  <div class="container section__grid">
+    <header class="section__head">
+      <p class="eyebrow">온라인몰 정산자동화</p>
+      <h2 class="h2" id="settlement-title">채널마다 다른 정산, 원장 하나로 맞춥니다.</h2>
+      <p class="section__summary">채널 정산 데이터 자동 수집 · 주문 매칭 · 수수료·미정산 검증 · ERP 연동 · 대시보드</p>
+    </header>
+    <div class="section__body">
+      <p class="body">쿠팡, 네이버 스마트스토어, 11번가, G마켓·옥션, 카카오, 무신사. 정산 주기도, 수수료율도, 반품과 프로모션 분담금을 빼는 방식도 모두 다릅니다. 엑셀로 맞추다 보면 어디선가 빠지고, 월말이면 '이 금액이 왜 이 금액인지'를 설명하는 데 며칠이 걸립니다.</p>
+      <p class="body">세이지웨이 정산자동화는 채널 정산 데이터를 자동으로 수집하고 주문과 정산을 건별로 매칭해, 수수료 오류와 미정산 건을 찾아냅니다. 검증된 결과는 ERP·회계 시스템으로 연동되고, 대시보드에서는 오늘 들어올 돈과 아직 안 들어온 돈이 한눈에 보입니다.</p>
+
+      <!-- (a) 채널-원장 다이어그램 -->
+      <figure class="diagram-wrap">
+        <div class="scroll-x">
+          <svg class="diagram" viewBox="0 0 760 400" role="img" aria-labelledby="diagram-title">
+            <title id="diagram-title">채널 정산 데이터가 세이지웨이 정산원장으로 모여 ERP·대시보드·알림으로 나가는 흐름</title>
+            <defs>
+              <marker id="arr-seal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="fill-seal"/></marker>
+            </defs>
+            <!-- 채널 → 원장 (제각각인 주기를 선의 성질로) -->
+            <g class="stroke-rule-strong" fill="none" stroke-width="1.5">
+              <path d="M176,46 C246,46 246,170 316,170"/>
+              <path d="M176,102 C246,102 246,182 316,182" stroke-dasharray="6 4"/>
+              <path d="M176,158 C246,158 246,194 316,194" stroke-dasharray="2 4"/>
+              <path d="M176,214 C246,214 246,206 316,206" stroke-dasharray="10 4"/>
+              <path d="M176,270 C246,270 246,218 316,218" stroke-dasharray="4 4 1 4"/>
+              <path d="M176,326 C246,326 246,230 316,230" stroke-dasharray="1 3"/>
+            </g>
+            <!-- 채널 타일 -->
+            <g class="tiles">
+              <rect x="0.75" y="24.75" width="175.5" height="43.5"/><text class="t-name" x="12" y="51">쿠팡</text><text class="t-cycle" x="166" y="62" text-anchor="end">주정산 · 예시</text>
+              <rect x="0.75" y="80.75" width="175.5" height="43.5"/><text class="t-name" x="12" y="107">네이버 스마트스토어</text><text class="t-cycle" x="166" y="118" text-anchor="end">구매확정 D+1 · 예시</text>
+              <rect x="0.75" y="136.75" width="175.5" height="43.5"/><text class="t-name" x="12" y="163">11번가</text><text class="t-cycle" x="166" y="174" text-anchor="end">구매확정 후 · 예시</text>
+              <rect x="0.75" y="192.75" width="175.5" height="43.5"/><text class="t-name" x="12" y="219">G마켓·옥션</text><text class="t-cycle" x="166" y="230" text-anchor="end">주정산 · 예시</text>
+              <rect x="0.75" y="248.75" width="175.5" height="43.5"/><text class="t-name" x="12" y="275">카카오</text><text class="t-cycle" x="166" y="286" text-anchor="end">월 2회 · 예시</text>
+              <rect x="0.75" y="304.75" width="175.5" height="43.5"/><text class="t-name" x="12" y="331">무신사</text><text class="t-cycle" x="166" y="342" text-anchor="end">월 1회 · 예시</text>
+            </g>
+            <!-- 원장 → ERP·대시보드·알림 (나가는 선은 하나의 성질) -->
+            <g class="stroke-sage" fill="none" stroke-width="2.5">
+              <path d="M468,200 C534,200 534,80 600,80"/>
+              <path d="M468,200 H600"/>
+              <path d="M468,200 C534,200 534,320 600,320"/>
+            </g>
+            <!-- 반품·취소: 되돌아오는 돈 -->
+            <g class="stroke-seal" fill="none" stroke-width="1.5">
+              <path d="M88,374 C250,374 392,372 392,268" stroke-dasharray="4 3" marker-end="url(#arr-seal)"/>
+              <rect x="0.75" y="360.75" width="87.5" height="26.5" class="fill-paper"/>
+            </g>
+            <text class="t-seal" x="44" y="378" text-anchor="middle">반품·취소</text>
+            <!-- 중앙 원장 노드 (이중 테두리) -->
+            <g class="node-ledger">
+              <rect x="316" y="140" width="152" height="120" class="fill-paper stroke-ink" stroke-width="2"/>
+              <rect x="321" y="145" width="142" height="110" fill="none" class="stroke-ink" stroke-width="1"/>
+              <text class="t-node" x="392" y="164" text-anchor="middle">세이지웨이 정산원장</text>
+              <g class="stroke-rule" stroke-width="1">
+                <line x1="332" y1="178" x2="452" y2="178"/><line x1="332" y1="196" x2="452" y2="196"/><line x1="332" y1="214" x2="452" y2="214"/><line x1="332" y1="232" x2="452" y2="232"/>
+              </g>
+              <g class="t-mini">
+                <text x="334" y="191">C-0417</text><text x="450" y="191" text-anchor="end">51,620</text>
+                <text x="334" y="209">N-2231</text><text x="450" y="209" text-anchor="end">39,690</text>
+                <text x="334" y="227">K-0906</text><text x="450" y="227" text-anchor="end" class="t-seal">−1,240</text>
+                <text x="334" y="246">합계</text><text x="450" y="246" text-anchor="end">차액 0</text>
+              </g>
+            </g>
+            <!-- 우측 노드 -->
+            <g class="nodes-out">
+              <rect x="600.75" y="58.75" width="158.5" height="42.5"/><text class="t-name" x="680" y="85" text-anchor="middle">ERP·회계</text>
+              <rect x="600.75" y="178.75" width="158.5" height="42.5"/><text class="t-name" x="680" y="205" text-anchor="middle">대시보드</text>
+              <rect x="600.75" y="298.75" width="158.5" height="42.5"/><text class="t-name t-name--sm" x="680" y="325" text-anchor="middle">알림 · 미정산 발견</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption class="caption"><span class="scroll-hint">옆으로 밀어 보세요 · </span>채널별 정산 주기와 흐름은 예시입니다.</figcaption>
+      </figure>
+
+      <!-- (b) 채널별 정산 주기 스트립 -->
+      <h3 class="h4 block-title">채널별 정산 주기 (예시)</h3>
+      <div class="cycle" role="table" aria-label="채널별 정산일 예시, 30일 기준">
+        <div class="cycle__row cycle__row--head" role="row">
+          <span class="cycle__label" role="columnheader">채널</span>
+          <span class="cycle__ticks mono" role="columnheader" aria-label="일자 눈금 1일부터 30일">
+            <i style="grid-column:1">1</i><i style="grid-column:5">5</i><i style="grid-column:10">10</i><i style="grid-column:15">15</i><i style="grid-column:20">20</i><i style="grid-column:25">25</i><i style="grid-column:30">30</i>
+          </span>
+        </div>
+        <div class="cycle__row" role="row">
+          <span class="cycle__label" role="rowheader">쿠팡</span>
+          <span class="cycle__cells" role="cell" style="background-image:var(--pay),var(--pay),var(--pay),var(--pay);background-position:calc(2*100%/29) 0,calc(9*100%/29) 0,calc(16*100%/29) 0,calc(23*100%/29) 0"><span class="sr-only">정산일 3, 10, 17, 24일</span></span>
+        </div>
+        <div class="cycle__row" role="row">
+          <span class="cycle__label" role="rowheader">스마트스토어</span>
+          <span class="cycle__cells" role="cell" style="background-image:var(--pay),var(--pay),var(--pay),var(--pay),var(--pay),var(--pay),var(--pay),var(--pay),var(--pay),var(--pay);background-position:calc(1*100%/29) 0,calc(4*100%/29) 0,calc(5*100%/29) 0,calc(8*100%/29) 0,calc(12*100%/29) 0,calc(13*100%/29) 0,calc(18*100%/29) 0,calc(21*100%/29) 0,calc(26*100%/29) 0,calc(27*100%/29) 0"><span class="sr-only">정산일 2, 5, 6, 9, 13, 14, 19, 22, 27, 28일</span></span>
+        </div>
+        <div class="cycle__row" role="row">
+          <span class="cycle__label" role="rowheader">11번가</span>
+          <span class="cycle__cells" role="cell" style="background-image:var(--pay),var(--pay),var(--pay),var(--pay),var(--pay);background-position:calc(3*100%/29) 0,calc(10*100%/29) 0,calc(11*100%/29) 0,calc(17*100%/29) 0,calc(24*100%/29) 0"><span class="sr-only">정산일 4, 11, 12, 18, 25일</span></span>
+        </div>
+        <div class="cycle__row" role="row">
+          <span class="cycle__label" role="rowheader">G마켓·옥션</span>
+          <span class="cycle__cells" role="cell" style="background-image:var(--pay),var(--pay),var(--pay),var(--pay);background-position:calc(4*100%/29) 0,calc(11*100%/29) 0,calc(18*100%/29) 0,calc(25*100%/29) 0"><span class="sr-only">정산일 5, 12, 19, 26일</span></span>
+        </div>
+        <div class="cycle__row" role="row">
+          <span class="cycle__label" role="rowheader">카카오</span>
+          <span class="cycle__cells" role="cell" style="background-image:var(--pay),var(--pay);background-position:calc(9*100%/29) 0,calc(24*100%/29) 0"><span class="sr-only">정산일 10, 25일</span></span>
+        </div>
+        <div class="cycle__row" role="row">
+          <span class="cycle__label" role="rowheader">무신사</span>
+          <span class="cycle__cells" role="cell" style="background-image:var(--pay);background-position:calc(24*100%/29) 0"><span class="sr-only">정산일 25일</span></span>
+        </div>
+      </div>
+      <p class="caption">채널별 정산 주기 예시. 실제 조건은 계약과 채널 정책에 따라 다릅니다.</p>
+
+      <!-- (c) 놓치는 것들 + 미니 대사표 -->
+      <div class="split-3-5">
+        <div>
+          <h3 class="h4 block-title">엑셀에서 놓치는 것들</h3>
+          <ul class="rule-list">
+            <li>채널별로 다른 정산 주기와 지급일</li>
+            <li>판매가 기준과 정산가 기준이 다른 수수료 계산</li>
+            <li>반품·교환 후 되돌아오지 않은 정산금</li>
+            <li>채널 프로모션 분담금의 사후 차감</li>
+            <li>부분 정산되어 잔액이 남은 주문</li>
+          </ul>
+        </div>
+        <div>
+          <!-- 예시 데이터 블록: 실제 데이터로 교체 시 data-sample 속성과 '예시' 표기를 함께 제거 -->
+          <div class="scroll-x" data-sample="true">
+            <table class="ledger ledger--mini">
+              <caption class="ledger__cap"><span class="mono">주문-정산 검증 · 예시 데이터</span></caption>
+              <thead>
+                <tr><th scope="col">주문번호</th><th scope="col">채널</th><th scope="col" class="num">판매가</th><th scope="col" class="num">정책 수수료</th><th scope="col" class="num">실제 차감</th><th scope="col" class="num">정산금액</th><th scope="col">상태</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="mono">N-240902-1180</td><td class="ch">스마트스토어</td><td class="num">₩42,000</td><td class="num">₩2,310</td><td class="num">₩2,310</td><td class="num">₩39,690</td><td class="status"><span class="ok">매칭</span></td></tr>
+                <tr><td class="mono">C-240903-0416</td><td class="ch">쿠팡</td><td class="num">₩58,000</td><td class="num">₩6,380</td><td class="num">₩6,380</td><td class="num">₩51,620</td><td class="status"><span class="ok">매칭</span></td></tr>
+                <tr class="is-mismatch"><td class="mono">K-240903-0906</td><td class="ch">카카오</td><td class="num">₩89,000</td><td class="num">₩8,550</td><td class="num">₩9,790</td><td class="num">₩79,210</td><td class="status"><span class="bad">불일치 −₩1,240</span><small>프로모션 분담금 사후 차감</small></td></tr>
+                <tr><td class="mono">E-240904-0088</td><td class="ch">11번가</td><td class="num">₩129,000</td><td class="num">₩15,480</td><td class="num">₩15,480</td><td class="num">₩113,520</td><td class="status"><span class="ok">매칭</span></td></tr>
+                <tr><td class="mono">G-240905-5120</td><td class="ch">G마켓</td><td class="num">₩36,500</td><td class="num">₩4,745</td><td class="num">—</td><td class="num">—</td><td class="status"><span class="badge-kraft">미정산 D+37</span></td></tr>
+                <tr><td class="mono">M-240906-3377</td><td class="ch">무신사</td><td class="num">₩64,000</td><td class="num">₩19,200</td><td class="num">₩19,200</td><td class="num">₩44,800</td><td class="status"><span class="ok">매칭</span></td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="7">검증 6건 · 이상 2건 (불일치 1 · 미정산 1)</td></tr>
+              </tfoot>
+            </table>
+          </div>
+          <p class="caption"><span class="scroll-hint">옆으로 밀어 보세요 · </span>주문번호와 금액은 모두 예시입니다.</p>
+        </div>
+      </div>
+
+      <!-- (d) 제공 기능 -->
+      <h3 class="h4 block-title">제공 기능</h3>
+      <div class="ledger-rows">
+        <div class="ledger-row ledger-row--feat"><span class="ledger-row__title">정산 데이터 자동 수집</span><span class="ledger-row__desc">채널 관리자·API·정산 파일을 스케줄에 따라 수집합니다.</span><span class="bridge-mini" aria-hidden="true"></span></div>
+        <div class="ledger-row ledger-row--feat"><span class="ledger-row__title">주문–정산 매칭</span><span class="ledger-row__desc">주문번호·옵션·수량 기준으로 건별 대사하고, 부분 정산·분할 정산도 같은 행에 붙입니다.</span><span class="bridge-mini" aria-hidden="true"></span></div>
+        <div class="ledger-row ledger-row--feat"><span class="ledger-row__title">수수료·미정산 검증</span><span class="ledger-row__desc">채널 정책 수수료율과 실제 차감액을 비교하고, 정산 예정일이 지난 건을 목록으로 만듭니다.</span><span class="bridge-mini" aria-hidden="true"></span></div>
+        <div class="ledger-row ledger-row--feat"><span class="ledger-row__title">ERP·회계 연동</span><span class="ledger-row__desc">회계 전표 형식으로 내보내며, 더존·SAP 등 ERP 직접 연동은 상담 시 범위를 확인합니다.</span><span class="bridge-mini" aria-hidden="true"></span></div>
+        <div class="ledger-row ledger-row--feat"><span class="ledger-row__title">대시보드</span><span class="ledger-row__desc">채널별 정산 예정·완료·차액과 미정산 잔액을 한 화면에서 봅니다.</span><span class="bridge-mini" aria-hidden="true"></span></div>
+      </div>
+
+      <!-- (e) 도입 흐름 (기간은 예시, 소유주 확정 값) -->
+      <h3 class="h4 block-title">도입 흐름</h3>
+      <ul class="flow" aria-label="도입 흐름">
+        <li><strong>현황 진단</strong><span class="mono">예시 2주</span></li>
+        <li><strong>채널 연결·규칙 설정</strong><span class="mono">채널 수에 따라</span></li>
+        <li><strong>기존 방식과 병행 검증</strong><span class="mono">예시 1개월</span></li>
+        <li><strong>운영 이관</strong><span class="mono">대시보드·알림 개시</span></li>
+      </ul>
+      <p class="caption">운영 후 채널 정책이 바뀌면 규칙을 함께 갱신합니다. 기간은 예시이며 채널 수에 따라 달라집니다.</p>
+
+      <p class="link-row"><a class="link-arrow" href="#contact">정산자동화 문의하기 →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STORE ===================== -->
+<section class="section" id="store" aria-labelledby="store-title" data-section-title="쇼핑몰 구축">
+  <div class="container section__grid">
+    <header class="section__head">
+      <p class="eyebrow">온라인 쇼핑몰 구축 · 국내/해외</p>
+      <h2 class="h2" id="store-title">국내에서 해외까지, 팔리는 매장을 만듭니다.</h2>
+    </header>
+    <div class="section__body">
+      <p class="body">카페24·고도몰·아임웹 같은 국내 플랫폼부터 자체 구축까지, 브랜드의 규모와 운영 방식에 맞는 방법을 제안합니다. 빠르게 열어야 하면 카페24·아임웹, 운영 기능이 중요하면 고도몰, 우리만의 구조가 필요하면 자체 구축입니다.</p>
+      <p class="body">해외 진출은 Shopify 구축과 아마존·라쿠텐·쇼피 입점을 함께 설계하고, 다국어·다통화·해외결제·물류 연동까지 실제 운영이 가능한 상태로 납품합니다. 정산자동화를 함께 하는 회사이기 때문에, 오픈 후 정산이 맞아떨어지도록 주문 데이터 구조를 처음부터 잡습니다. 오픈 후 1개월 안정화 기간에는 운영 매뉴얼과 담당자 교육을 함께 드립니다.</p>
+
+      <!-- (a) 국내/해외 탭 + 와이어프레임 -->
+      <div class="tabs" data-tabs>
+        <div class="tablist" role="tablist" aria-label="쇼핑몰 화면 구성 예시">
+          <button type="button" role="tab" id="tab-kr" aria-selected="true" aria-controls="panel-kr" tabindex="0">국내 · 카페24</button>
+          <button type="button" role="tab" id="tab-global" aria-selected="false" aria-controls="panel-global" tabindex="-1">해외 · Shopify</button>
+        </div>
+        <div class="tabpanels">
+          <div class="tabpanel" role="tabpanel" id="panel-kr" aria-labelledby="tab-kr">
+            <div class="wire">
+              <div class="wire__chrome"><span class="wire__tab mono">shop.example.kr</span></div>
+              <div class="wire__head">
+                <span class="wire__logo" aria-hidden="true"></span>
+                <span class="wire__search">검색</span>
+                <span class="wire__cart">장바구니 <span class="mono">2</span></span>
+              </div>
+              <div class="wire__banner"><span class="wire__banner-text">시즌 기획전</span></div>
+              <div class="wire__grid" aria-hidden="true">
+                <div class="wire__card"><div class="wire__img"></div><span class="wire__line wire__line--60"></span><span class="wire__line wire__line--40"></span><span class="wire__price mono">₩38,000</span><span class="wire__badge">무료배송</span></div>
+                <div class="wire__card"><div class="wire__img"></div><span class="wire__line wire__line--60"></span><span class="wire__line wire__line--40"></span><span class="wire__price mono">₩24,000</span><span class="wire__badge">무료배송</span></div>
+                <div class="wire__card"><div class="wire__img"></div><span class="wire__line wire__line--60"></span><span class="wire__line wire__line--40"></span><span class="wire__price mono">₩56,000</span><span class="wire__badge">무료배송</span></div>
+                <div class="wire__card"><div class="wire__img"></div><span class="wire__line wire__line--60"></span><span class="wire__line wire__line--40"></span><span class="wire__price mono">₩19,000</span><span class="wire__badge">무료배송</span></div>
+                <div class="wire__card"><div class="wire__img"></div><span class="wire__line wire__line--60"></span><span class="wire__line wire__line--40"></span><span class="wire__price mono">₩42,000</span><span class="wire__badge">무료배송</span></div>
+                <div class="wire__card"><div class="wire__img"></div><span class="wire__line wire__line--60"></span><span class="wire__line wire__line--40"></span><span class="wire__price mono">₩31,000</span><span class="wire__badge">무료배송</span></div>
+              </div>
+              <div class="wire__pay"><span>네이버페이</span><span>카카오페이</span><span>카드</span></div>
+            </div>
+          </div>
+          <div class="tabpanel is-hidden" role="tabpanel" id="panel-global" aria-labelledby="tab-global" aria-hidden="true" inert>
+            <div class="wire">
+              <div class="wire__chrome"><span class="wire__tab mono">shop.example.com</span></div>
+              <div class="wire__head">
+                <span class="wire__logo" aria-hidden="true"></span>
+                <span class="wire__search">Search</span>
+                <span class="wire__chips mono"><span>KO</span><span class="is-on">EN</span><span>JA</span></span>
+                <span class="wire__chips mono"><span>KRW</span><span class="is-on">USD</span><span>JPY</span></span>
+                <span class="wire__cart">Cart <span class="mono">2</span></span>
+              </div>
+              <div class="wire__banner"><span class="wire__banner-text">Season Edit</span><span class="wire__badge wire__badge--outline">관세 포함 가격</span></div>
+              <div class="wire__grid" aria-hidden="true">
+                <div class="wire__card"><div class="wire__img"></div><span class="wire__line wire__line--60"></span><span class="wire__line wire__line--40"></span><span class="wire__price mono">US$29.00</span><span class="wire__badge">Ships to 32 countries</span></div>
+                <div class="wire__card"><div class="wire__img"></div><span class="wire__line wire__line--60"></span><span class="wire__line wire__line--40"></span><span class="wire__price mono">US$18.00</span><span class="wire__badge">Ships to 32 countries</span></div>
+                <div class="wire__card"><div class="wire__img"></div><span class="wire__line wire__line--60"></span><span class="wire__line wire__line--40"></span><span class="wire__price mono">US$42.00</span><span class="wire__badge">Ships to 32 countries</span></div>
+                <div class="wire__card"><div class="wire__img"></div><span class="wire__line wire__line--60"></span><span class="wire__line wire__line--40"></span><span class="wire__price mono">US$14.00</span><span class="wire__badge">Ships to 32 countries</span></div>
+                <div class="wire__card"><div class="wire__img"></div><span class="wire__line wire__line--60"></span><span class="wire__line wire__line--40"></span><span class="wire__price mono">US$32.00</span><span class="wire__badge">Ships to 32 countries</span></div>
+                <div class="wire__card"><div class="wire__img"></div><span class="wire__line wire__line--60"></span><span class="wire__line wire__line--40"></span><span class="wire__price mono">US$23.00</span><span class="wire__badge">Ships to 32 countries</span></div>
+              </div>
+              <div class="wire__pay"><span>PayPal</span><span>Card</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="caption">화면 구성 예시. 실제 디자인은 브랜드에 맞춰 제작합니다.</p>
+      </div>
+
+      <!-- (b) 플랫폼 원장 -->
+      <div class="two-col two-col--tables">
+        <table class="ledger ledger--kv">
+          <caption class="ledger__cap"><span class="mono">국내 구축</span></caption>
+          <tbody>
+            <tr><th scope="row">플랫폼</th><td>카페24 · 고도몰 · 아임웹 · 자체 구축(헤드리스)</td></tr>
+            <tr><th scope="row">범위</th><td>디자인, 상품 등록 구조, PG 결제, 배송, 회원, 마케팅 도구 연동, 스마트스토어·쿠팡 마켓 연동, 운영 교육</td></tr>
+          </tbody>
+        </table>
+        <table class="ledger ledger--kv">
+          <caption class="ledger__cap"><span class="mono">해외 구축</span></caption>
+          <tbody>
+            <tr><th scope="row">플랫폼</th><td>Shopify 구축 · 아마존 입점 · 라쿠텐 입점 · 쇼피 입점</td></tr>
+            <tr><th scope="row">범위</th><td>다국어 콘텐츠, 다통화 표시·결제, 해외 PG(PayPal, Stripe 등), 국제 물류·통관 정보 연동, 현지 CS 템플릿</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- (c) 해외 구축 필수 항목 -->
+      <h3 class="h4 block-title">해외 구축에서 반드시 잡는 것</h3>
+      <div class="ledger-rows">
+        <div class="ledger-row ledger-row--2 ledger-row--3-9"><span class="ledger-row__title">다국어</span><span class="ledger-row__desc">언어별 상품명·상세·정책 페이지, 검색엔진 대응</span></div>
+        <div class="ledger-row ledger-row--2 ledger-row--3-9"><span class="ledger-row__title">다통화</span><span class="ledger-row__desc">환율 반영 가격 표시와 결제 통화 분리</span></div>
+        <div class="ledger-row ledger-row--2 ledger-row--3-9"><span class="ledger-row__title">해외결제</span><span class="ledger-row__desc">국가별 선호 결제수단 구성, 사기 방지 설정</span></div>
+        <div class="ledger-row ledger-row--2 ledger-row--3-9"><span class="ledger-row__title">물류 연동</span><span class="ledger-row__desc">해외 배송사·풀필먼트·통관 서류 자동화</span></div>
+      </div>
+
+      <p class="link-row">
+        <a class="link-arrow" href="#contact">쇼핑몰 구축 문의하기 →</a>
+        <a class="link-sub" href="#settlement">해외 정산도 자동으로 → 정산자동화 보기</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GOODS ===================== -->
+<section class="section" id="goods" aria-labelledby="goods-title" data-section-title="판촉물·기념품">
+  <div class="container section__grid">
+    <header class="section__head">
+      <p class="eyebrow">판촉물·기념품 기획 및 제작</p>
+      <h2 class="h2" id="goods-title">기획부터 납품까지, 손에 남는 브랜드를 만듭니다.</h2>
+    </header>
+    <div class="section__body">
+      <p class="body">임직원 선물, 행사 기념품, 고객 사은품, 브랜드 굿즈. 같은 텀블러라도 소재, 인쇄 방식, 포장에 따라 받는 사람의 인상이 달라집니다. 용도와 예산, 수량, 납기를 먼저 듣고 품목과 제작 방식을 제안합니다.</p>
+      <p class="body">실물 샘플을 확인한 뒤에만 생산에 들어가며, 소량 100개부터 대량 수만 개까지 대응합니다. 재생 PET, FSC 인증 종이, 유기농 면 같은 친환경 소재 옵션도 사양서 한 장으로 함께 정리해 드립니다.</p>
+
+      <!-- (a) 제작 사양서 + 도면 -->
+      <div class="split-5-3">
+        <table class="ledger ledger--kv sheet-kraft" id="spec-sheet">
+          <caption class="ledger__cap ledger__cap--kraft"><span class="mono">제작 사양서 No. SW-GD-<span class="ph">[0000]</span></span><span class="stamp--sq">예시</span></caption>
+          <tbody>
+            <tr><th scope="row">품목</th><td>스테인리스 텀블러 500ml</td></tr>
+            <tr data-part="body"><th scope="row">소재</th><td>STS 304 이중진공 <span class="muted">(옵션: 재생 스테인리스)</span></td></tr>
+            <tr data-part="body"><th scope="row">규격</th><td class="mono">Ø73 × 205mm</td></tr>
+            <tr data-part="engrave"><th scope="row">인쇄</th><td>레이저 각인 1면 또는 실크 1도</td></tr>
+            <tr><th scope="row">색상</th><td>세이지 그린 / 오프화이트</td></tr>
+            <tr><th scope="row">수량</th><td><span class="mono">300</span>개 <span class="muted">(최소 100개부터)</span></td></tr>
+            <tr data-part="pack"><th scope="row">포장</th><td>개별 크라프트 박스 + 슬리브 인쇄</td></tr>
+            <tr><th scope="row">납기</th><td>샘플 확정 후 영업일 <span class="mono">15~20</span>일</td></tr>
+            <tr><th scope="row">단가</th><td><span class="ph">[견적 시 안내]</span></td></tr>
+          </tbody>
+        </table>
+        <figure class="drawing">
+          <svg class="tumbler" viewBox="0 0 260 340" aria-hidden="true" focusable="false" id="tumbler-svg">
+            <!-- 치수선 -->
+            <g class="dim">
+              <line x1="112" y1="16" x2="208" y2="16"/><line x1="112" y1="12" x2="112" y2="20"/><line x1="208" y1="12" x2="208" y2="20"/>
+              <text x="160" y="11" text-anchor="middle">Ø73</text>
+              <line x1="228" y1="36" x2="228" y2="300"/><line x1="224" y1="36" x2="232" y2="36"/><line x1="224" y1="300" x2="232" y2="300"/>
+              <text transform="rotate(90 240 168)" x="240" y="168" text-anchor="middle">205mm</text>
+            </g>
+            <!-- 뚜껑 -->
+            <g class="part" id="part-lid">
+              <rect x="112" y="36" width="96" height="24"/>
+              <rect x="142" y="24" width="36" height="12"/>
+            </g>
+            <!-- 몸통 -->
+            <g class="part" id="part-body">
+              <path d="M112,60 H208 L204,286 Q204,300 190,300 H130 Q116,300 116,286 Z"/>
+            </g>
+            <!-- 각인면 -->
+            <g class="part part--engrave" id="part-engrave">
+              <rect x="130" y="150" width="60" height="72"/>
+              <text x="160" y="236" text-anchor="middle">각인면 50×60</text>
+            </g>
+            <!-- 포장 -->
+            <g class="part" id="part-pack">
+              <rect x="100" y="316" width="120" height="18"/>
+              <text x="160" y="329" text-anchor="middle">포장 · 크라프트 박스</text>
+            </g>
+            <!-- 리더 라벨 -->
+            <g class="leader">
+              <line x1="112" y1="48" x2="92" y2="48"/><text x="88" y="51" text-anchor="end">뚜껑</text>
+              <line x1="112" y1="120" x2="92" y2="120"/><text x="88" y="123" text-anchor="end">몸통 STS 304</text>
+              <line x1="130" y1="186" x2="92" y2="186"/><text x="88" y="189" text-anchor="end">레이저 각인</text>
+            </g>
+          </svg>
+          <figcaption class="mono caption">도면 · 예시</figcaption>
+        </figure>
+      </div>
+
+      <!-- (b) 소재 스와치 -->
+      <ul class="swatches" aria-label="소재 옵션">
+        <li><span class="swatch swatch--cotton" aria-hidden="true"></span><strong>재생 코튼</strong><span>에코백, 파우치</span></li>
+        <li><span class="swatch swatch--kraft" aria-hidden="true"></span><strong>크라프트</strong><span>박스, 노트</span></li>
+        <li><span class="swatch swatch--steel" aria-hidden="true"></span><strong>스테인리스</strong><span>텀블러, 보틀</span></li>
+        <li><span class="swatch swatch--pet" aria-hidden="true"></span><strong>재생 PET</strong><span>파우치, 키링</span></li>
+      </ul>
+
+      <!-- (c) 공정 타임라인 (실제 순서이므로 번호 사용) -->
+      <h3 class="h4 block-title">제작 공정</h3>
+      <ol class="process">
+        <li>
+          <span class="process__num mono">01</span>
+          <h4 class="process__name">기획</h4>
+          <p class="process__desc">용도·예산·수량·납기를 확인하고 품목 3안을 제안합니다.</p>
+          <dl class="process__dl"><dt>드리는 것</dt><dd>기획안, 견적서</dd><dt>정해 주실 것</dt><dd>예산 범위, 납품처</dd></dl>
+          <span class="process__time mono">예시 2~3일</span>
+        </li>
+        <li>
+          <span class="process__num mono">02</span>
+          <h4 class="process__name">디자인</h4>
+          <p class="process__desc">로고·컬러 적용 시안과 인쇄 방식을 정합니다.</p>
+          <dl class="process__dl"><dt>드리는 것</dt><dd>시안 2~3종, 제작 사양서</dd><dt>정해 주실 것</dt><dd>시안 선택, 문구</dd></dl>
+          <span class="process__time mono">예시 3~5일</span>
+        </li>
+        <li class="process__step--approve">
+          <svg class="stamp stamp--approve" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <circle cx="60" cy="60" r="56" class="stamp__ring-outer"/>
+            <circle cx="60" cy="60" r="47" class="stamp__ring-inner"/>
+            <defs><path id="ring-approve" d="M60,60 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs>
+            <text class="stamp__ringtext"><textPath href="#ring-approve">SAGEWAY · APPROVED · SAGEWAY · APPROVED</textPath></text>
+            <text class="stamp__core stamp__core--2" x="60" y="54" text-anchor="middle">고객<tspan x="60" dy="22">승인</tspan></text>
+          </svg>
+          <span class="process__num mono">03</span>
+          <h4 class="process__name">샘플</h4>
+          <p class="process__desc">실물 샘플로 색상·마감·크기를 확인합니다. 수정 1회 포함.</p>
+          <dl class="process__dl"><dt>드리는 것</dt><dd>실물 샘플, 수정 반영안</dd><dt>정해 주실 것</dt><dd>생산 승인</dd></dl>
+          <span class="process__time mono">예시 5~10일</span>
+        </li>
+        <li>
+          <span class="process__num mono">04</span>
+          <h4 class="process__name">생산</h4>
+          <p class="process__desc">승인 샘플 기준으로 생산하고 중간 검수를 진행합니다.</p>
+          <dl class="process__dl"><dt>드리는 것</dt><dd>검수 보고</dd><dt>정해 주실 것</dt><dd>진행 보고 확인</dd></dl>
+          <span class="process__time mono">예시 10~20일</span>
+        </li>
+        <li>
+          <span class="process__num mono">05</span>
+          <h4 class="process__name">납품</h4>
+          <p class="process__desc">개별 포장·수량 확인 후 지정 장소로 납품하거나 쇼핑몰 배송에 동봉합니다.</p>
+          <dl class="process__dl"><dt>드리는 것</dt><dd>납품 확인서, 잔량·재주문 안내</dd><dt>정해 주실 것</dt><dd>인수 확인</dd></dl>
+          <span class="process__time mono">예시 1~3일</span>
+        </li>
+      </ol>
+      <p class="caption">소요 기간은 품목과 수량에 따른 예시이며 견적 시 확정합니다.</p>
+
+      <!-- (d) 용도별 품목 -->
+      <h3 class="h4 block-title">용도별 품목</h3>
+      <div class="ledger-rows">
+        <div class="ledger-row ledger-row--2 ledger-row--3-9"><span class="ledger-row__title">임직원 선물</span><span class="ledger-row__desc">텀블러, 다이어리, 웰컴 키트</span></div>
+        <div class="ledger-row ledger-row--2 ledger-row--3-9"><span class="ledger-row__title">행사 기념품</span><span class="ledger-row__desc">에코백, 뱃지, 아크릴 키링</span></div>
+        <div class="ledger-row ledger-row--2 ledger-row--3-9"><span class="ledger-row__title">고객 사은품</span><span class="ledger-row__desc">파우치, 노트, 티 세트 (쇼핑몰 배송 동봉 사양으로 제작)</span></div>
+        <div class="ledger-row ledger-row--2 ledger-row--3-9"><span class="ledger-row__title">브랜드 굿즈</span><span class="ledger-row__desc">티셔츠, 스티커 팩, 포스터 (소량 다품종)</span></div>
+      </div>
+
+      <p class="link-row"><a class="link-arrow" href="#contact">판촉물·기념품 문의하기 →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY ===================== -->
+<section class="section" id="why" aria-labelledby="why-title" data-section-title="맡기는 이유">
+  <div class="container section__grid">
+    <header class="section__head">
+      <p class="eyebrow">세이지웨이에 맡기는 이유</p>
+      <h2 class="h2" id="why-title">'할 수 있습니다' 대신, 확인한 것만 약속합니다.</h2>
+      <p class="body body--sm">정산 데이터가 쇼핑몰 구축의 기준이 되고, 쇼핑몰 운영 경험이 판촉물 기획에 반영됩니다. 따로 맡기면 세 번 설명해야 할 일이 세이지웨이에서는 한 번이면 됩니다.</p>
+    </header>
+    <div class="section__body">
+      <div class="why">
+        <div class="why__head" aria-hidden="true"><span>강점</span><span>세이지웨이가 하는 것</span><span>고객이 얻는 것</span></div>
+        <div class="ledger-row why__row">
+          <span class="ledger-row__title">한 팀이 끝까지</span>
+          <span class="why__does">기획·개발·제작 담당이 한 회사에 있어 외주를 거치며 사양이 바뀌지 않습니다. 창구는 한 명입니다.</span>
+          <span class="why__gets"><span class="why__gets-label">고객이 얻는 것</span><span class="bridge-mini" aria-hidden="true"></span>상담부터 납품·운영 이관까지 같은 담당자</span>
+        </div>
+        <div class="ledger-row why__row">
+          <span class="ledger-row__title">숫자에 정직</span>
+          <span class="why__does">정산 오차는 원 단위로, 납품 수량은 개 단위로 보고합니다. 못 맞춘 것은 못 맞췄다고 먼저 말씀드립니다.</span>
+          <span class="why__gets"><span class="why__gets-label">고객이 얻는 것</span><span class="bridge-mini" aria-hidden="true"></span>합계가 아니라 건 단위로 맞는 숫자</span>
+        </div>
+        <div class="ledger-row why__row">
+          <span class="ledger-row__title">규모에 맞게</span>
+          <span class="why__does">판촉물은 100개부터, 쇼핑몰은 카페24 한 채널부터, 정산은 채널 두 개부터 시작합니다. 커지면 같은 팀이 이어서 맡습니다.</span>
+          <span class="why__gets"><span class="why__gets-label">고객이 얻는 것</span><span class="bridge-mini" aria-hidden="true"></span>지금 규모에 맞는 견적과 범위</span>
+        </div>
+        <div class="ledger-row why__row">
+          <span class="ledger-row__title">납품 후에도</span>
+          <span class="why__does">운영 이관 매뉴얼, 재주문, 정산 규칙 갱신, 쇼핑몰 유지보수까지 계약 범위 안에서 계속 봅니다.</span>
+          <span class="why__gets"><span class="why__gets-label">고객이 얻는 것</span><span class="bridge-mini" aria-hidden="true"></span>이어지는 데이터와 이어지는 담당</span>
+        </div>
+      </div>
+      <p class="why__close">약속한 것과 하는 것이 같도록, 확인한 내용은 모두 문서로 남깁니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CASES ===================== -->
+<section class="section section--bed" id="cases" aria-labelledby="cases-title" data-section-title="사례">
+  <div class="container section__grid">
+    <header class="section__head">
+      <p class="eyebrow">사례</p>
+      <h2 class="h2" id="cases-title">예시로 보는 결과</h2>
+      <p class="body body--sm">아래 사례는 서비스 이해를 돕기 위해 구성한 예시이며 실제 고객 데이터가 아닙니다. 실제 사례와 레퍼런스는 문의 시 안내해 드립니다.</p>
+      <p class="link-row"><a class="link-arrow" href="#contact">실제 사례 문의하기 →</a></p>
+    </header>
+    <div class="section__body">
+      <!-- 예시 사례 블록: 실제 레퍼런스로 교체 시 data-sample 속성과 .stamp, .sample-caption 을 함께 제거 -->
+      <div class="docs" data-sample="true">
+        <article class="doc">
+          <div class="doc__band"><span class="mono">정산 결과서 · 정산자동화 · 예시</span></div>
+          <svg class="stamp stamp--sample" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <circle cx="60" cy="60" r="56" class="stamp__ring-outer"/><circle cx="60" cy="60" r="47" class="stamp__ring-inner"/>
+            <defs><path id="ring-case-1" d="M60,60 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs>
+            <text class="stamp__ringtext"><textPath href="#ring-case-1">SAMPLE · 예시 데이터 · SAMPLE · 예시 데이터 · SAMPLE</textPath></text>
+            <text class="stamp__core" x="60" y="67" text-anchor="middle">예시</text>
+          </svg>
+          <div class="doc__body">
+            <h3 class="doc__title">다채널 셀러 A사</h3>
+            <dl class="kv-leader">
+              <div><dt>운영 채널</dt><dd class="mono">6개</dd></div>
+              <div><dt>월 주문</dt><dd class="mono">18,000건</dd></div>
+            </dl>
+            <p class="doc__divider"><span class="mono">결과</span></p>
+            <dl class="kv-leader">
+              <div class="is-big"><dt>월 정산 검증 시간</dt><dd class="mono">40시간 <span class="arrow">→</span> 4시간</dd></div>
+              <div><dt>첫 달 발견 미정산</dt><dd class="mono">₩3,120,000</dd></div>
+              <div><dt>수수료 오류</dt><dd class="mono">27건</dd></div>
+            </dl>
+            <p class="sample-caption">예시 데이터 · 실제 고객 데이터가 아닙니다</p>
+          </div>
+        </article>
+        <article class="doc">
+          <div class="doc__band"><span class="mono">구축 완료 보고서 · 해외 쇼핑몰 구축 · 예시</span></div>
+          <svg class="stamp stamp--sample" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <circle cx="60" cy="60" r="56" class="stamp__ring-outer"/><circle cx="60" cy="60" r="47" class="stamp__ring-inner"/>
+            <defs><path id="ring-case-2" d="M60,60 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs>
+            <text class="stamp__ringtext"><textPath href="#ring-case-2">SAMPLE · 예시 데이터 · SAMPLE · 예시 데이터 · SAMPLE</textPath></text>
+            <text class="stamp__core" x="60" y="67" text-anchor="middle">예시</text>
+          </svg>
+          <div class="doc__body">
+            <h3 class="doc__title">뷰티 브랜드 B사</h3>
+            <dl class="kv-leader">
+              <div><dt>구축</dt><dd>Shopify + 아마존 JP 입점</dd></div>
+              <div><dt>언어 · 통화</dt><dd class="mono">3개 · 3개</dd></div>
+            </dl>
+            <p class="doc__divider"><span class="mono">결과</span></p>
+            <dl class="kv-leader">
+              <div class="is-big"><dt>구축 기간</dt><dd class="mono">8주</dd></div>
+              <div><dt>해외 주문 정산</dt><dd>오픈 첫 달부터 자동 연동</dd></div>
+              <div><dt>첫 3개월 해외 매출 비중</dt><dd class="mono">0% <span class="arrow">→</span> 14%</dd></div>
+            </dl>
+            <p class="sample-caption">예시 데이터 · 실제 고객 데이터가 아닙니다</p>
+          </div>
+        </article>
+        <article class="doc">
+          <div class="doc__band"><span class="mono">납품 확인서 · 기념품 제작 · 예시</span></div>
+          <svg class="stamp stamp--sample" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+            <circle cx="60" cy="60" r="56" class="stamp__ring-outer"/><circle cx="60" cy="60" r="47" class="stamp__ring-inner"/>
+            <defs><path id="ring-case-3" d="M60,60 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs>
+            <text class="stamp__ringtext"><textPath href="#ring-case-3">SAMPLE · 예시 데이터 · SAMPLE · 예시 데이터 · SAMPLE</textPath></text>
+            <text class="stamp__core" x="60" y="67" text-anchor="middle">예시</text>
+          </svg>
+          <div class="doc__body">
+            <h3 class="doc__title">임직원 1,200명 C사</h3>
+            <dl class="kv-leader">
+              <div><dt>품목</dt><dd>창립 기념 웰컴 키트 4종</dd></div>
+              <div><dt>재생 소재 비율</dt><dd class="mono">70%</dd></div>
+            </dl>
+            <p class="doc__divider"><span class="mono">결과</span></p>
+            <dl class="kv-leader">
+              <div class="is-big"><dt>기획부터 납품</dt><dd class="mono">6주</dd></div>
+              <div><dt>납품 방식</dt><dd>개별 포장 · 부서별 분류</dd></div>
+              <div><dt>불량 반품</dt><dd class="mono">0건</dd></div>
+            </dl>
+            <p class="sample-caption">예시 데이터 · 실제 고객 데이터가 아닙니다</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section" id="faq" aria-labelledby="faq-title" data-section-title="자주 묻는 질문">
+  <div class="container section__grid">
+    <header class="section__head">
+      <p class="eyebrow">자주 묻는 질문</p>
+      <h2 class="h2" id="faq-title">자주 묻는 질문</h2>
+      <p class="body body--sm">문의 전에 자주 확인하시는 내용입니다. 여기 없는 질문은 문의 양식에 그대로 남겨 주세요.</p>
+    </header>
+    <div class="section__body">
+      <div class="faq">
+        <details class="faq__item">
+          <summary><span class="faq__q">정산자동화는 어떤 채널을 지원하나요?</span><span class="faq__preview">쿠팡, 네이버 스마트스토어, 11번가, G마켓·옥션, 카카오, 무신사를 기본 지원합니다.</span></summary>
+          <p class="faq__a">쿠팡, 네이버 스마트스토어, 11번가, G마켓·옥션, 카카오, 무신사를 기본 지원하며, 정산 파일을 제공하는 채널은 추가 연동이 가능합니다.</p>
+        </details>
+        <details class="faq__item">
+          <summary><span class="faq__q">기존 ERP와 연동되나요?</span><span class="faq__preview">회계 전표 형식으로 내보내기를 기본 제공합니다.</span></summary>
+          <p class="faq__a">회계 전표 형식으로 내보내기를 기본 제공하며, ERP별 직접 연동은 상담 시 범위를 확인해 드립니다.</p>
+        </details>
+        <details class="faq__item">
+          <summary><span class="faq__q">쇼핑몰 구축 기간은 얼마나 걸리나요?</span><span class="faq__preview">플랫폼 기반 구축은 4~8주, 자체 구축은 범위에 따라 8주 이상입니다.</span></summary>
+          <!-- 소유주 확정 값: 구축 기간 -->
+          <p class="faq__a">플랫폼 기반 구축은 4~8주, 자체 구축은 범위에 따라 8주 이상입니다. 착수 전 일정표를 드리고, 오픈 후 1개월은 안정화 기간으로 운영합니다.</p>
+        </details>
+        <details class="faq__item">
+          <summary><span class="faq__q">판촉물 최소 수량이 있나요?</span><span class="faq__preview">품목에 따라 다르며 보통 100개부터 가능합니다.</span></summary>
+          <!-- 소유주 확정 값: 최소 수량 -->
+          <p class="faq__a">품목에 따라 다르며 보통 100개부터 가능합니다. 소량은 단가가 높아지므로 대안 품목을 함께 제안합니다.</p>
+        </details>
+        <details class="faq__item">
+          <summary><span class="faq__q">견적은 어떻게 받나요?</span><span class="faq__preview">문의 양식에 내용을 남기시면 영업일 기준 1일 안에 담당자가 연락드립니다.</span></summary>
+          <!-- 소유주 확정 값: 회신 기한 -->
+          <p class="faq__a">문의 양식에 내용을 남기시면 영업일 기준 1일 안에 담당자가 연락드리고, 범위 확인 후 항목별 견적서를 보내드립니다.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="section" id="contact" aria-labelledby="contact-title" data-section-title="문의">
+  <div class="container section__grid">
+    <header class="section__head">
+      <p class="eyebrow">문의</p>
+      <h2 class="h2" id="contact-title">지금 하시는 고민을 그대로 적어 주세요.</h2>
+      <p class="body body--sm">정산이 안 맞는 이유를 모르셔도, 쇼핑몰이 처음이셔도, 기념품 수량이 아직 정해지지 않으셨어도 괜찮습니다. 운영 채널 목록, 오픈 목표일, 원하는 품목과 수량처럼 지금 알고 계신 것만 적어 주시면 영업일 기준 1일 안에 담당자가 회신드립니다.</p>
+      <!-- 연락처: 소유주가 대괄호 값 교체 (링크가 아닌 선택 가능한 텍스트) -->
+      <dl class="contact-info">
+        <div><dt>전화</dt><dd><span class="copy-target ph mono" id="tel-value">[02-0000-0000]</span> <button type="button" class="copy-btn" data-copy="#tel-value">복사</button></dd></div>
+        <div><dt>이메일</dt><dd><span class="copy-target ph mono" id="mail-value">[contact@<wbr>sageway.example]</span> <button type="button" class="copy-btn" data-copy="#mail-value">복사</button></dd></div>
+        <div><dt>상담 시간</dt><dd>평일 <span class="mono">09:00–18:00</span></dd></div>
+      </dl>
+      <span class="sr-only" aria-live="polite" id="copy-live"></span>
+    </header>
+    <div class="section__body">
+      <form class="inquiry" id="inquiry" novalidate>
+        <div class="form__summary" id="form-summary" aria-live="polite"></div>
+
+        <fieldset class="field field--full" id="field-service">
+          <legend class="label">관심 서비스 <span class="req">(필수, 복수 선택)</span></legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="service" value="정산자동화" id="svc-settlement"><span class="chip__box" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span><span>정산자동화</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="쇼핑몰 구축" id="svc-store"><span class="chip__box" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span><span>쇼핑몰 구축</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="판촉물·기념품" id="svc-goods"><span class="chip__box" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span><span>판촉물·기념품</span></label>
+          </div>
+          <p class="field__error" id="err-service" hidden>관심 서비스를 하나 이상 선택해 주세요.</p>
+        </fieldset>
+
+        <div class="field">
+          <label class="label" for="company">회사명 <span class="req">(필수)</span></label>
+          <input id="company" name="company" type="text" autocomplete="organization" aria-describedby="err-company">
+          <p class="field__error" id="err-company" hidden>회사명을 입력해 주세요.</p>
+        </div>
+        <div class="field">
+          <label class="label" for="person">담당자 성함 <span class="req">(필수)</span></label>
+          <input id="person" name="person" type="text" autocomplete="name" aria-describedby="err-person">
+          <p class="field__error" id="err-person" hidden>담당자 성함을 입력해 주세요.</p>
+        </div>
+        <div class="field">
+          <label class="label" for="email">이메일 <span class="req">(필수)</span></label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" aria-describedby="err-email">
+          <p class="field__error" id="err-email" hidden>이메일 형식을 확인해 주세요.</p>
+        </div>
+        <div class="field">
+          <label class="label" for="tel">연락처 <span class="req">(필수)</span></label>
+          <input id="tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000" aria-describedby="err-tel">
+          <p class="field__error" id="err-tel" hidden>연락처를 숫자로 입력해 주세요.</p>
+        </div>
+        <div class="field field--full">
+          <label class="label" for="message">문의 내용 <span class="req">(필수)</span></label>
+          <textarea id="message" name="message" rows="5" placeholder="예: 운영 채널, 월 주문량, 원하는 품목과 수량, 희망 일정" aria-describedby="err-message"></textarea>
+          <p class="field__error" id="err-message" hidden>문의 내용을 입력해 주세요.</p>
+        </div>
+        <div class="field field--full field--consent">
+          <label class="chip chip--plain"><input type="checkbox" name="consent" id="consent" aria-describedby="err-consent"><span class="chip__box" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.5 10,3"/></svg></span><span>개인정보 수집·이용에 동의합니다. <span class="req">(필수)</span></span></label>
+          <span class="ph small">[개인정보처리방침 링크 대체]</span>
+          <p class="field__error" id="err-consent" hidden>동의가 필요합니다.</p>
+        </div>
+        <div class="field field--full field--submit">
+          <button type="submit" class="btn btn--primary">문의 보내기</button>
+        </div>
+      </form>
+
+      <div class="receipt" id="receipt" role="status" aria-live="polite" hidden></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <span class="wordmark__latin wordmark__latin--lg">SAGEWAY</span>
+        <span class="wordmark__ko">세이지웨이</span>
+        <p class="body--sm">온라인몰 정산자동화 · 온라인 쇼핑몰(국내/해외) 구축 · 판촉물·기념품 기획 및 제작</p>
+      </div>
+      <div>
+        <p class="label">바로가기</p>
+        <ul class="site-footer__links">
+          <li><a href="#about">회사소개</a></li>
+          <li><a href="#settlement">정산자동화</a></li>
+          <li><a href="#store">쇼핑몰 구축</a></li>
+          <li><a href="#goods">판촉물·기념품</a></li>
+          <li><a href="#cases">사례</a></li>
+          <li><a href="#faq">자주 묻는 질문</a></li>
+          <li><a href="#contact">문의</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="label">회사 정보</p>
+        <!-- 회사 정보: 소유주가 대괄호 값 교체 -->
+        <dl class="site-footer__info">
+          <div><dt>상호</dt><dd>세이지웨이</dd></div>
+          <div><dt>대표</dt><dd><span class="ph">[대표자명]</span></dd></div>
+          <div><dt>사업자등록번호</dt><dd><span class="ph mono">[000-00-00000]</span></dd></div>
+          <div><dt>통신판매업신고</dt><dd><span class="ph">[해당 시 입력]</span></dd></div>
+          <div><dt>주소</dt><dd><span class="ph">[주소를 입력해 주세요]</span></dd></div>
+          <div><dt>전화</dt><dd><span class="ph mono">[02-0000-0000]</span></dd></div>
+          <div><dt>이메일</dt><dd><span class="ph mono">[contact@<wbr>sageway.example]</span></dd></div>
+        </dl>
+      </div>
+      <div>
+        <p class="label">문의</p>
+        <p><a class="link-arrow" href="#contact">문의하기 →</a></p>
+        <div class="theme-switch" role="group" aria-label="화면 테마">
+          <button type="button" data-theme-set="light" aria-pressed="false" aria-label="밝은 테마로 전환">밝게</button>
+          <button type="button" data-theme-set="dark" aria-pressed="false" aria-label="어두운 테마로 전환">어둡게</button>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© 2026 Sageway. All rights reserved. · 개인정보처리방침 <span class="ph">[링크 대체]</span> · 이용약관 <span class="ph">[링크 대체]</span></p>
+      <p class="mono">마지막 장</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
