@@ -122,6 +122,8 @@
         if (next) { e.preventDefault(); activateTab(next); next.focus(); }
       });
     }
+    /* 정적 HTML은 JS 없이도 두 패널을 모두 보여 주므로, 초기 탭 상태는 여기서 적용합니다. */
+    activateTab(tabs[0]);
   }
 
   /* ---------- 브릿지 로드 애니메이션 (완성 상태가 기본) ---------- */
@@ -153,20 +155,35 @@
   if (specSheet && tumbler) {
     var rows = specSheet.querySelectorAll('tr[data-part]');
     function setHot(part, on) {
-      var g = tumbler.querySelector('#part-' + part);
-      if (g) g.classList.toggle('is-hot', on);
+      part.split(' ').forEach(function (p) {
+        var g = tumbler.querySelector('#part-' + p);
+        if (g) g.classList.toggle('is-hot', on);
+      });
     }
     for (var r = 0; r < rows.length; r++) {
       (function (row) {
         var part = row.getAttribute('data-part');
-        row.setAttribute('tabindex', '0');
         row.addEventListener('mouseenter', function () { setHot(part, true); });
         row.addEventListener('mouseleave', function () { setHot(part, false); });
-        row.addEventListener('focus', function () { setHot(part, true); });
-        row.addEventListener('blur', function () { setHot(part, false); });
       })(rows[r]);
     }
   }
+
+  /* ---------- 가로 스크롤 표시 (넘칠 때만 힌트 · 페이드) ---------- */
+  var scrollers = document.querySelectorAll('.scroll-x');
+  function updateScrollers() {
+    for (var i = 0; i < scrollers.length; i++) {
+      var el = scrollers[i];
+      el.classList.toggle('is-scrollable', el.scrollWidth > el.clientWidth + 1);
+      el.classList.toggle('is-end', el.scrollLeft + el.clientWidth >= el.scrollWidth - 1);
+    }
+  }
+  for (var si = 0; si < scrollers.length; si++) {
+    scrollers[si].addEventListener('scroll', updateScrollers, { passive: true });
+  }
+  window.addEventListener('resize', updateScrollers);
+  window.addEventListener('load', updateScrollers);
+  updateScrollers();
 
   /* ---------- 복사 버튼 ---------- */
   var copyLive = document.getElementById('copy-live');
@@ -218,12 +235,21 @@
       }
     }
 
+    function setGroupInvalid(on) {
+      var boxes = form.querySelectorAll('input[name="service"]');
+      for (var i = 0; i < boxes.length; i++) {
+        if (on) boxes[i].setAttribute('aria-invalid', 'true');
+        else boxes[i].removeAttribute('aria-invalid');
+      }
+    }
+
     function validate() {
       var errors = [];
       var services = form.querySelectorAll('input[name="service"]:checked');
       var fieldService = document.getElementById('field-service');
       var svcBad = services.length === 0;
       showError(fieldService, 'err-service', svcBad);
+      setGroupInvalid(svcBad);
       if (svcBad) errors.push(form.querySelector('input[name="service"]'));
 
       var company = form.company; var companyBad = !company.value.trim();
@@ -243,7 +269,8 @@
       showError(message, 'err-message', messageBad); if (messageBad) errors.push(message);
 
       var consent = form.consent; var consentBad = !consent.checked;
-      showError(consent.closest('.field'), 'err-consent', consentBad); if (consentBad) errors.push(consent);
+      showError(consent, 'err-consent', consentBad); consent.closest('.field').classList.toggle('is-error', consentBad);
+      if (consentBad) errors.push(consent);
 
       return errors;
     }
@@ -284,7 +311,7 @@
       dl.appendChild(kvRow('관심 서비스', data.services.join(', ')));
       dl.appendChild(kvRow('회사명', data.company));
       dl.appendChild(kvRow('담당자', data.person));
-      dl.appendChild(kvRow('회신 예정', '영업일 기준 1일 안에 ' + data.email + '로 회신드립니다.'));
+      dl.appendChild(kvRow('회신 예정', '영업일 기준 1일 안에 입력하신 이메일(' + data.email + ')로 회신드립니다.'));
       receipt.appendChild(dl);
 
       var check = el('p', 'receipt__check');
@@ -338,6 +365,8 @@
       });
     }
 
+    /* JS가 있으면 자체 검증을 쓰고, 없으면 브라우저 기본 required 검증이 동작합니다. */
+    form.noValidate = true;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var errors = validate();
@@ -370,9 +399,10 @@
       var t = e.target;
       if (t.name === 'service' && form.querySelectorAll('input[name="service"]:checked').length) {
         showError(document.getElementById('field-service'), 'err-service', false);
+        setGroupInvalid(false);
       }
       if (t.name === 'consent' && t.checked) {
-        showError(t.closest('.field'), 'err-consent', false);
+        showError(t, 'err-consent', false); t.closest('.field').classList.remove('is-error');
       }
     });
   }
