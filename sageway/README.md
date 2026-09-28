@@ -7,7 +7,7 @@
 sageway/
 ├─ index.html   섹션 마크업(인라인 SVG 포함)
 ├─ style.css    색 토큰 → 리셋 → 타이포 → 레이아웃 → 컴포넌트 → 섹션 → 반응형 → 다크 → 모션
-└─ main.js      테마 전환, 헤더 현재 섹션, 목차 dialog, 국내/해외 탭, 브릿지 애니메이션, 문의 폼 검증·접수증, 복사 버튼
+└─ main.js      테마 전환, 헤더 현재 섹션, 목차 dialog, 국내/해외 탭, 브릿지 애니메이션, 사양서 하이라이트, 복사 버튼
 ```
 
 ## 로컬에서 열기
@@ -27,7 +27,6 @@ python -m http.server 8765 --directory sageway
 | 위치 | 항목 |
 | --- | --- |
 | 판촉물 → 제작 사양서 | 문서번호 `SW-GD-[0000]`, 단가 |
-| 문의 → 개인정보 동의 | 수집 고지 문구의 보유 기간(현재 '문의 처리 후 1년') 확인 |
 | `<head>` | `<title>`, `<meta name="description">` |
 
 ## 예시 데이터 표기
@@ -35,14 +34,9 @@ python -m http.server 8765 --directory sageway
 정산 대사표, 채널별 정산 주기, 주문-정산 검증표, 제작 사양서, 공정 소요 기간, 사례 3건은 모두 **예시**이며 실제 채널 정책이나 고객 데이터를 주장하지 않습니다.
 실제 레퍼런스로 교체할 때는 `data-sample="true"` 속성이 붙은 블록(사례, 미니 대사표)과 `.stamp--sample`, `.sample-caption` 을 함께 정리하세요. FAQ 의 회신 기한(영업일 1일), 쇼핑몰 구축 기간(4~8주), 최소 수량(100개)은 HTML 주석으로 '소유주 확정 값' 이라고 표시해 두었습니다.
 
-## 문의 폼 연결
+## 문의 방법
 
-문의 폼은 [FormSubmit](https://formsubmit.co)을 통해 `sageway9@gmail.com` 으로 전송됩니다(별도 서버 없음).
-
-- JS가 켜져 있으면 `main.js` 가 `https://formsubmit.co/ajax/sageway9@gmail.com` 으로 JSON 을 보내고, 성공 응답을 받은 뒤에만 접수증을 표시합니다. 실패하면 폼 위에 오류 문구를 띄웁니다.
-- JS가 꺼져 있으면 `<form action="https://formsubmit.co/sageway9@gmail.com" method="post">` 로 일반 전송됩니다.
-- **처음 한 번은 활성화가 필요합니다.** 첫 문의가 들어오면 FormSubmit 이 `sageway9@gmail.com` 으로 확인 메일을 보내고, 메일 안의 활성화 버튼을 누른 뒤부터 문의가 전달됩니다.
-- 받는 주소를 바꾸려면 `index.html` 의 form `action` 과 `main.js` 의 `INQUIRY_EMAIL` 을 함께 바꿉니다.
+문의 폼은 두지 않습니다. 문의 섹션에 이메일(`sageway9@gmail.com`, 복사 버튼 포함)과 '메일로 문의하기' 버튼(`mailto:` 링크, 제목 자동 입력)이 있습니다. 주소를 바꾸려면 `index.html` 에서 `sageway9` 로 검색해 모두 바꿉니다.
 
 ## 디자인 시스템 메모
 

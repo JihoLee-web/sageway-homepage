@@ -143,6 +143,7 @@ main::before {
 .section__head { display: flex; flex-direction: column; gap: 16px; }
 .section__summary { font-size: 13px; color: var(--ink-3); line-height: 1.6; }
 .section__body { min-width: 0; }
+.section__body > .block-title:first-child { margin-top: 0; }
 .two-col { display: grid; gap: 40px 24px; margin-top: 48px; }
 .two-col > div > .block-title:first-child { margin-top: 0; }
 .two-col--tables { margin-top: 40px; }
@@ -632,51 +633,6 @@ html:not(.js) .tabpanel + .tabpanel { margin-top: 24px; }
 /* JS 없음: 동작하지 않는 테마 · 복사 버튼은 감춥니다. */
 html:not(.js) .theme-switch, html:not(.js) .copy-btn { display: none; }
 
-.inquiry { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 24px; }
-.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-.field--full { grid-column: 1 / -1; }
-fieldset.field { border: 0; padding: 0; margin: 0; }
-fieldset.field legend { padding: 0; margin-bottom: 8px; }
-.req { color: var(--ink-3); font-weight: 400; }
-.inquiry input[type="text"], .inquiry input[type="email"], .inquiry input[type="tel"], .inquiry textarea {
-  width: 100%; background: var(--paper); border: 0; border-bottom: 1px solid var(--ink-3); border-radius: 0;
-  padding: 10px 0; font-size: 15px; line-height: 1.4; color: var(--ink);
-}
-.inquiry textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
-.inquiry input::placeholder, .inquiry textarea::placeholder { color: var(--ink-3); opacity: 1; }
-.inquiry input:focus, .inquiry textarea:focus { outline: none; box-shadow: 0 2px 0 var(--sage); }
-.inquiry input[aria-invalid="true"], .inquiry textarea[aria-invalid="true"] { border-bottom-color: var(--seal); box-shadow: inset 3px 0 0 var(--seal); padding-left: 10px; }
-.inquiry input[aria-invalid="true"]:focus, .inquiry textarea[aria-invalid="true"]:focus { box-shadow: inset 3px 0 0 var(--seal), 0 2px 0 var(--focus); }
-.field__error { font-size: 13px; color: var(--seal); line-height: 1.4; }
-.chips { display: flex; flex-wrap: wrap; gap: 10px 24px; }
-.chip { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; cursor: pointer; }
-.chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-.chip__box { width: 16px; height: 16px; border: 1px solid var(--ink-3); display: inline-grid; place-items: center; flex: none; background: var(--paper); transition: background-color 150ms; }
-.chip__box svg { width: 12px; height: 12px; fill: none; stroke: var(--on-sage); stroke-width: 2; stroke-linecap: square; opacity: 0; }
-.chip input:checked + .chip__box { background: var(--sage); border-color: var(--sage); }
-.chip input:checked + .chip__box svg { opacity: 1; }
-.chip:hover .chip__box { background: var(--sage-soft); }
-.chip input:checked:hover + .chip__box { background: var(--sage); }
-.chip input:focus-visible + .chip__box { outline: 2px solid var(--focus); outline-offset: 2px; }
-.field--consent { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
-.field--consent .field__error { width: 100%; }
-.field.is-error .chip__box { border-color: var(--seal); }
-.field--submit { margin-top: 4px; }
-.field--submit .btn { min-width: 160px; align-self: flex-start; }
-.form__summary:not(:empty) { grid-column: 1 / -1; font-size: 14px; color: var(--seal); padding-left: 12px; box-shadow: inset 3px 0 0 var(--seal); }
-
-.receipt { position: relative; background: var(--kraft); border: 1px solid var(--kraft-ink); padding: 24px 24px 28px; display: flex; flex-direction: column; gap: 12px; }
-.receipt__head { font-family: var(--font-mono); font-size: 13px; color: var(--kraft-ink); letter-spacing: .06em; }
-.receipt__title { font-family: var(--font-display); font-weight: 800; font-size: 24px; line-height: 1.3; }
-.receipt__title:focus { outline: none; }
-.receipt .kv-leader dt { color: var(--kraft-ink); }
-.receipt .kv-leader > div::after { border-bottom-color: var(--kraft-ink); }
-.receipt .kv-leader dd { font-size: 15px; color: var(--ink); }
-.receipt__check { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; }
-.receipt__note { font-size: 12px; color: var(--kraft-ink); line-height: 1.6; padding-right: 96px; }
-.stamp--receipt { position: absolute; width: 88px; right: 16px; bottom: 16px; }
-.js-anim .receipt.is-in .stamp--receipt { animation: stamp-in 220ms cubic-bezier(.2, .8, .2, 1) both; }
-@keyframes stamp-in { from { transform: scale(1.4) rotate(-14deg); opacity: 0; } to { transform: scale(1) rotate(-8deg); opacity: .92; } }
 
 /* ---------- 16. 푸터 ---------- */
 .site-footer { background: var(--footer-bg); padding-block: 64px 32px; }
@@ -778,7 +734,6 @@ fieldset.field legend { padding: 0; margin-bottom: 8px; }
   .cycle__row--head .cycle__label { display: none; }
   .cycle__ticks { font-size: 9.5px; letter-spacing: -0.03em; }
   .split-3-5 .scroll-x { margin-top: 0; }
-  .inquiry { grid-template-columns: 1fr; }
   .toc__foot { flex-direction: column; align-items: stretch; }
 }
 
@@ -826,7 +781,3 @@ fieldset.field legend { padding: 0; margin-bottom: 8px; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; transition-delay: 0ms !important; }
 }
-
-/* 개인정보 수집 고지 · 전송 중 버튼 */
-.field--consent .consent__note { width: 100%; margin: 0; }
-.btn[disabled] { opacity: .6; cursor: progress; }
