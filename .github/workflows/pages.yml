@@ -29,7 +29,8 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p _site
-          cp sageway/index.html sageway/style.css sageway/main.js _site/
+          cp -r sageway/. _site/
+          rm -f _site/README.md
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>세이지웨이 SAGEWAY | 온라인 쇼핑몰 구축·운영, 판촉물·기념품 제작</title>
+<meta name="description" content="세이지웨이는 국내·해외 온라인 쇼핑몰을 구축하고 운영하며, 판촉물과 기념품을 기획해 제작합니다. 처음 상담한 담당자가 납품과 운영까지 맡습니다.">
+<meta property="og:title" content="세이지웨이 SAGEWAY | 온라인 쇼핑몰 구축·운영, 판촉물·기념품 제작">
+<meta property="og:description" content="국내·해외 온라인 쇼핑몰 구축과 운영, 판촉물·기념품 기획 및 제작. 견적은 항목별로, 담당자는 처음부터 끝까지.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="세이지웨이 SAGEWAY">
+<meta name="theme-color" content="#F6F7F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121815" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%234F7A5B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+/* JS 사용 표시(JS 전용 컨트롤 노출 기준)와 저장된 테마를 렌더 전에 적용해 깜빡임을 막습니다. */
+(function () { document.documentElement.classList.add('js'); try { var t = localStorage.getItem('sw-theme'); if (t === 'light' || t === 'dark') { document.documentElement.setAttribute('data-theme', t); var c = t === 'dark' ? '#121815' : '#F6F7F2'; var ms = document.querySelectorAll('meta[name="theme-color"]'); for (var i = 0; i < ms.length; i++) ms[i].setAttribute('content', c); } } catch (e) {} })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+<!-- ===================== 헤더 ===================== -->
+<header class="site-header" id="top">
+  <div class="container site-header__inner">
+    <a class="wordmark" href="#top">
+      <span class="wordmark__latin">SAGEWAY</span>
+      <span class="wordmark__ko">세이지웨이</span>
+      <span class="sr-only"> 처음으로</span>
+    </a>
+
+    <!-- 좁은 화면(JS 있음): 헤더에는 워드마크와 메뉴 버튼만 두고, 테마 버튼은 펼친 메뉴 안에 둡니다. -->
+    <button type="button" class="menu-btn" data-menu-toggle aria-expanded="false" aria-controls="site-nav" hidden>메뉴</button>
+
+    <nav class="site-nav" id="site-nav" aria-label="주요 메뉴">
+      <ul class="site-nav__list">
+        <li><a href="#store">쇼핑몰 구축·운영</a></li>
+        <li><a href="#goods">판촉물·기념품</a></li>
+        <li><a href="#how">일하는 방식</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+        <li><a href="#contact" class="site-nav__cta">문의</a></li>
+      </ul>
+      <div class="site-nav__tools">
+        <!-- 라벨이 다음 동작을 말합니다: 밝은 화면에서 '어둡게', 어두운 화면에서 '밝게' (JS가 바꿉니다). -->
+        <button type="button" class="theme-btn" data-theme-toggle hidden>어둡게</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== 히어로 ===================== -->
+<section class="hero" id="hero" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="kicker kicker--seal">온라인 쇼핑몰 구축·운영 &nbsp;·&nbsp; 판촉물·기념품 제작</p>
+      <h1 class="h1" id="hero-title">팔리는 매장을 만들고, <br>손에 남는 브랜드를 만듭니다.</h1>
+      <p class="lead">세이지웨이는 국내·해외 온라인 쇼핑몰을 구축하고 운영하며, 판촉물과 기념품을 기획해 제작합니다. 처음 상담한 담당자가 납품과 운영까지 맡습니다.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="mailto:sageway9@gmail.com?subject=%5B%EC%84%B8%EC%9D%B4%EC%A7%80%EC%9B%A8%EC%9D%B4%5D%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%AC%B8%EC%9D%98">메일로 문의하기</a>
+        <a class="btn btn--ghost" href="#store">사업 영역 보기</a>
+      </div>
+    </div>
+
+    <!-- 사업 영역 색인 (번호 없음) -->
+    <nav class="index" aria-label="사업 영역">
+      <p class="index__title">사업 영역</p>
+      <a class="index__row" href="#store">
+        <span class="index__name">온라인 쇼핑몰 국내/&#8288;해외 구축 및 운영</span>
+        <span class="index__desc">카페24·고도몰·아임웹·자체 구축, Shopify와 아마존·라쿠텐·쇼피 입점, 오픈 후 운영까지.</span>
+        <span class="index__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="index__row" href="#goods">
+        <span class="index__name">판촉물·기념품 <br>기획 및 제작</span>
+        <span class="index__desc">임직원 선물, 행사 기념품, 고객 사은품, 브랜드 굿즈를 기획부터 납품까지.</span>
+        <span class="index__arrow" aria-hidden="true">→</span>
+      </a>
+    </nav>
+  </div>
+</section>
+
+<!-- ===================== 쇼핑몰 구축·운영 ===================== -->
+<section class="section" id="store" aria-labelledby="store-title">
+  <div class="container spread">
+    <header class="spread__head">
+      <p class="kicker">온라인 쇼핑몰 국내/해외 구축 및 운영</p>
+      <h2 class="h2" id="store-title">매장을 열고, <br>연 뒤에도 함께 운영합니다.</h2>
+      <p class="spread__note">플랫폼 선택부터 오픈 후 운영까지 한 담당자가 이어서 맡습니다.</p>
+    </header>
+
+    <div class="spread__body">
+      <p class="body">빠르게 열어야 하면 카페24·아임웹, 운영 기능이 중요하면 고도몰, 우리만의 구조가 필요하면 자체 구축을 제안합니다. 해외는 Shopify 구축과 아마존·라쿠텐·쇼피 입점을 함께 설계해, 실제로 주문을 받고 배송할 수 있는 상태로 넘겨 드립니다.</p>
+
+      <div class="rows">
+        <div class="row">
+          <div>
+            <h3 class="h3">국내 구축</h3>
+          </div>
+          <dl class="kv">
+            <div class="kv__item"><dt>플랫폼</dt><dd>카페24 · 고도몰 · 아임웹 · 자체 구축(헤드리스)</dd></div>
+            <div class="kv__item"><dt>범위</dt><dd>디자인, 상품 등록 구조, PG 결제, 배송, 회원, 마케팅 도구 연동, 스마트스토어·쿠팡 마켓 연동</dd></div>
+          </dl>
+        </div>
+
+        <div class="row">
+          <div>
+            <h3 class="h3">해외 구축</h3>
+            <p class="row__sub">입점만 따로 진행하실 수도 있습니다.</p>
+          </div>
+          <dl class="kv">
+            <div class="kv__item"><dt>플랫폼</dt><dd>Shopify 구축 · 아마존·라쿠텐·쇼피 입점</dd></div>
+            <div class="kv__item"><dt>범위</dt><dd>다국어, 다통화, 해외결제(PayPal, Stripe 등), 국제 물류·통관 연동</dd></div>
+          </dl>
+        </div>
+
+        <div class="row row--accent">
+          <div>
+            <h3 class="h3">운영</h3>
+            <p class="row__sub">오픈은 시작입니다. 운영만 따로 맡기실 수도 있습니다.</p>
+          </div>
+          <dl class="kv">
+            <div class="kv__item"><dt>일상 운영</dt><dd>상품 등록·업데이트, 프로모션·기획전 운영, 광고·마케팅 도구 관리</dd></div>
+            <div class="kv__item"><dt>응대·보고</dt><dd>CS 응대 템플릿, 운영 리포트</dd></div>
+            <div class="kv__item"><dt>유지보수</dt><dd>플랫폼 업데이트 대응, 오류 점검, 연동 상태 확인</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <!-- 소요 기간 -->
+      <h3 class="h4 block-title">소요 기간</h3>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <span class="timeline__k">구축</span>
+          <span class="timeline__v">플랫폼 기반 4~8주 <br>자체 구축 8주 이상</span>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__k">오픈 후 안정화</span>
+          <span class="timeline__v">1개월</span>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__k">운영</span>
+          <span class="timeline__v">오픈 후에도 이어서</span>
+        </li>
+      </ol>
+      <p class="caption">기간은 범위에 따라 달라지며, 착수 전에 일정표로 확정합니다.</p>
+
+      <p class="first">
+        <span class="first__label">첫 상담 후 드리는 것</span>
+        <span class="first__value">플랫폼 제안서와 일정표</span>
+      </p>
+      <a class="service-link" href="#contact">쇼핑몰 구축·운영 문의하기 <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 판촉물·기념품 ===================== -->
+<section class="section" id="goods" aria-labelledby="goods-title">
+  <div class="container spread">
+    <header class="spread__head">
+      <p class="kicker">판촉물·기념품 기획 및 제작</p>
+      <h2 class="h2" id="goods-title">받는 사람의 손에 <br>남는 것을 만듭니다.</h2>
+      <p class="spread__note">용도와 예산을 듣고 품목 3안을 먼저 제안합니다.</p>
+    </header>
+
+    <div class="spread__body">
+      <p class="body">누구에게, 무엇을 위해 드리는지에서 출발합니다. 용도에 맞는 품목을 고르고, 실물 샘플로 확인한 다음 생산에 들어갑니다. 최소 수량과 친환경 소재 등 조건은 아래 진행 조건에 정리해 두었습니다.</p>
+
+      <h3 class="h4 block-title">용도</h3>
+      <ul class="uses">
+        <li class="uses__item"><strong>임직원 선물</strong><span>명절, 창립 기념, 입사 환영</span></li>
+        <li class="uses__item"><strong>행사 기념품</strong><span>세미나, 전시, 출시 행사</span></li>
+        <li class="uses__item"><strong>고객 사은품</strong><span>구매 감사, 멤버십, 시즌 프로모션</span></li>
+        <li class="uses__item"><strong>브랜드 굿즈</strong><span>판매용·증정용 브랜드 상품</span></li>
+      </ul>
+
+      <h3 class="h4 block-title">제작 공정</h3>
+      <ol>
+        <li class="step">
+          <span class="step__num" aria-hidden="true">1</span>
+          <span class="step__name">기획</span>
+          <span class="step__desc">용도·수량·예산 확인, 품목 3안 제안</span>
+          <span class="step__time">2~3일 · 예시</span>
+        </li>
+        <li class="step">
+          <span class="step__num" aria-hidden="true">2</span>
+          <span class="step__name">디자인</span>
+          <span class="step__desc">로고·문구 적용, 시안 확정(수정 1회 포함)</span>
+          <span class="step__time">3~5일 · 예시</span>
+        </li>
+        <li class="step">
+          <span class="step__num" aria-hidden="true">3</span>
+          <span class="step__name">샘플</span>
+          <span class="step__desc">실물 샘플 확인 후 생산 확정</span>
+          <span class="step__time">5~10일 · 예시</span>
+        </li>
+        <li class="step">
+          <span class="step__num" aria-hidden="true">4</span>
+          <span class="step__name">생산</span>
+          <span class="step__desc">인쇄·가공·검수</span>
+          <span class="step__time">10~20일 · 예시</span>
+        </li>
+        <li class="step">
+          <span class="step__num" aria-hidden="true">5</span>
+          <span class="step__name">납품</span>
+          <span class="step__desc">포장·배송, 수량 확인</span>
+          <span class="step__time">1~3일 · 예시</span>
+        </li>
+      </ol>
+      <p class="caption">소요 기간은 예시이며, 품목과 수량에 따라 달라집니다.</p>
+
+      <h3 class="h4 block-title">진행 조건</h3>
+      <dl class="kv kv--plain">
+        <div class="kv__item"><dt>최소 수량</dt><dd>100개부터(품목에 따라 다름)</dd></div>
+        <div class="kv__item"><dt>샘플</dt><dd>실물 샘플 확인 후 생산</dd></div>
+        <div class="kv__item"><dt>수정</dt><dd>디자인 수정 1회 포함</dd></div>
+        <div class="kv__item kv__item--eco"><dt>친환경 소재</dt><dd>재생 PET, FSC 인증 종이, 유기농 면 중 선택</dd></div>
+        <div class="kv__item"><dt>견적</dt><dd>항목별 견적서</dd></div>
+      </dl>
+
+      <p class="first">
+        <span class="first__label">첫 상담 후 드리는 것</span>
+        <span class="first__value">품목 3안과 견적서</span>
+      </p>
+      <a class="service-link" href="#contact">판촉물·기념품 문의하기 <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 일하는 방식 ===================== -->
+<section class="section" id="how" aria-labelledby="how-title">
+  <div class="container spread">
+    <header class="spread__head">
+      <p class="kicker">일하는 방식</p>
+      <h2 class="h2" id="how-title">확인한 것만 <br>약속합니다.</h2>
+    </header>
+
+    <div class="spread__body">
+      <ul class="principles">
+        <li class="principle">
+          <p class="principle__title">견적은 항목별로 드립니다.</p>
+          <p class="principle__desc">무엇에 얼마가 드는지 감추지 않습니다. 구축, 제작, 운영 모두 항목별 견적서로 드리고, 범위가 바뀌면 바뀐 항목만 다시 드립니다.</p>
+        </li>
+        <li class="principle">
+          <p class="principle__title">담당자가 바뀌지 않습니다.</p>
+          <p class="principle__desc">처음 상담한 사람이 납품과 운영까지 맡습니다. 처음에 나눈 이야기를 알고 있는 사람이 끝까지 일합니다.</p>
+        </li>
+        <li class="principle">
+          <p class="principle__title">실물과 실제 화면을 확인한 뒤 진행합니다.</p>
+          <p class="principle__desc">판촉물은 실물 샘플을, 쇼핑몰은 실제 주문·결제 화면을 함께 확인한 다음에 생산과 오픈으로 넘어갑니다.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 자주 묻는 질문 ===================== -->
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="container spread">
+    <header class="spread__head">
+      <p class="kicker">자주 묻는 질문</p>
+      <h2 class="h2" id="faq-title">자주 받는 질문에 <br>먼저 답해 두었습니다.</h2>
+    </header>
+
+    <div class="spread__body">
+      <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__q">쇼핑몰 구축 기간은 얼마나 걸리나요?</summary>
+          <p class="faq__a">플랫폼 기반 구축은 4~8주, 자체 구축은 범위에 따라 8주 이상입니다. 착수 전에 일정표를 드리고, 오픈 후 1개월은 안정화 기간으로 함께 운영합니다.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">이미 운영 중인 쇼핑몰의 운영만 맡길 수 있나요?</summary>
+          <p class="faq__a">네. 오픈 후 운영만 따로 맡길 수도 있습니다. 상품 등록·업데이트, 프로모션·기획전, 광고·마케팅 도구 관리, CS 응대 템플릿, 운영 리포트, 유지보수 중 필요한 범위를 확인한 뒤 항목별 견적서를 드립니다.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">해외 입점만 따로 진행할 수 있나요?</summary>
+          <p class="faq__a">네. 아마존·라쿠텐·쇼피 입점만 진행하거나 Shopify 구축과 함께 진행할 수 있습니다. 다국어, 다통화, 해외결제, 물류·통관 연동 중 필요한 범위를 먼저 확인합니다.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">판촉물 최소 수량이 있나요?</summary>
+          <p class="faq__a">품목에 따라 다르며 보통 100개부터 가능합니다. 소량은 단가가 높아지므로 대안 품목을 함께 제안합니다.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__q">견적은 어떻게 받나요?</summary>
+          <p class="faq__a">sageway9@gmail.com으로 내용을 보내 주시면 영업일 기준 1일 안에 담당자가 회신드리고, 범위를 확인한 뒤 항목별 견적서를 보내 드립니다.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 문의 ===================== -->
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="container spread">
+    <header class="spread__head">
+      <p class="kicker">문의</p>
+      <h2 class="h2" id="contact-title">지금 고민을 <br>그대로 적어 보내 주세요.</h2>
+      <p class="spread__note">쇼핑몰이 처음이셔도, 수량을 아직 정하지 않으셨어도 괜찮습니다. 지금 알고 계신 것만 적어 주세요.</p>
+    </header>
+
+    <div class="spread__body">
+      <p class="contact__email">
+        <span class="contact__label">이메일</span>
+        <span class="contact__address" id="email-text">sageway9@gmail.com</span>
+        <button type="button" class="copy-btn" data-copy="#email-text" hidden>복사</button>
+      </p>
+      <span class="sr-only" id="copy-live" aria-live="polite"></span>
+
+      <dl class="kv kv--plain contact__meta">
+        <div class="kv__item"><dt>상담 시간</dt><dd>평일 09:00–18:00</dd></div>
+        <div class="kv__item"><dt>회신</dt><dd>영업일 기준 1일 안에</dd></div>
+      </dl>
+
+      <a class="btn btn--primary btn--lg" href="mailto:sageway9@gmail.com?subject=%5B%EC%84%B8%EC%9D%B4%EC%A7%80%EC%9B%A8%EC%9D%B4%5D%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%AC%B8%EC%9D%98">메일로 문의하기</a>
+
+      <h3 class="h4 block-title">메일에 적어 주시면 좋은 내용</h3>
+      <dl class="kv kv--plain">
+        <div class="kv__item"><dt>쇼핑몰</dt><dd>판매 품목, 국내/해외, 희망 플랫폼(있다면), 오픈 희망 시기, 운영 대행 여부, 운영만 맡기실 경우 현재 운영 채널</dd></div>
+        <div class="kv__item"><dt>판촉물</dt><dd>용도, 수량, 예산, 납품 희망일, 로고 파일 유무</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== 푸터 ===================== -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <a class="wordmark" href="#top">
+      <span class="wordmark__latin">SAGEWAY</span>
+      <span class="wordmark__ko">세이지웨이</span>
+      <span class="sr-only"> 처음으로</span>
+    </a>
+    <dl class="site-footer__info">
+      <div><dt>상호</dt><dd>세이지웨이 (SAGEWAY)</dd></div>
+      <div><dt>대표</dt><dd>주희수</dd></div>
+      <div><dt>사업자등록번호</dt><dd>862-81-03082</dd></div>
+      <div><dt>주소</dt><dd>서울특별시 중구 퇴계로 450, 5층 505-6호 (신당동, 신영빌딩)</dd></div>
+      <div><dt>이메일</dt><dd><a href="mailto:sageway9@gmail.com">sageway9@gmail.com</a></dd></div>
+    </dl>
+    <p class="site-footer__copy">© 2026 Sageway. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
