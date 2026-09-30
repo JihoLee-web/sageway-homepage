@@ -1,6 +1,6 @@
-/* Sageway landing — implemented from "Sageway Landing v3" (Modernist design system). */
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap');
+/* Sageway landing — implemented from "Sageway Landing v3" (Modernist design system).
+   Fonts (Archivo, Noto Sans KR) are loaded from index.html <head> so they start
+   downloading in parallel with this stylesheet. */
 
 /* ── Tokens (Modernist) ─────────────────────────────────────────────── */
 :root {
@@ -104,6 +104,38 @@ figure { margin: 0; }
 }
 .nav .btn-primary { min-height: 40px; padding-inline: 16px; font-size: 14px; }
 .nav .btn-primary:hover { color: var(--color-bg); }
+
+/* Mobile menu — a <details> so it needs no JavaScript. Hidden on wide
+   screens where the links sit inline; below 760px the inline links hide and
+   the "메뉴" toggle drops a list under the bar. */
+.nav-menu { display: none; }
+.nav-menu > summary {
+  list-style: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 40px; padding: 0 4px;
+  font-family: var(--font); font-weight: 800; font-size: 14px;
+}
+.nav-menu > summary::-webkit-details-marker { display: none; }
+.nav-menu > summary .bars { display: block; width: 18px; height: 2px; background: currentColor; box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor; }
+.nav-menu[open] > summary .bars { box-shadow: none; transform: rotate(45deg); }
+.nav-menu[open] > summary .bars::after { content: ""; display: block; width: 18px; height: 2px; background: currentColor; transform: rotate(90deg); }
+.nav-menu-list {
+  position: absolute; left: 0; right: 0; top: 100%; z-index: 20;
+  margin: 0; padding: 4px var(--gutter) 12px; list-style: none;
+  background: var(--color-bg);
+  border-bottom: 2px solid var(--color-divider);
+}
+.nav-menu-list a {
+  display: block; padding: 12px 0; min-height: 44px;
+  font-size: 17px; font-weight: 800;
+  border-top: 2px solid var(--color-divider);
+}
+.nav-menu-list li:first-child a { border-top: 0; }
+@media (max-width: 760px) {
+  .nav { position: relative; flex-wrap: nowrap; gap: 12px; }
+  .nav > a:not(.nav-brand):not(.btn) { display: none; }
+  .nav-menu { display: block; }
+}
 
 /* ── Hero ───────────────────────────────────────────────────────────── */
 .hero { padding: clamp(64px, 9vw, 128px) 0 clamp(48px, 6vw, 80px); }
@@ -294,7 +326,8 @@ figure { margin: 0; }
   font-family: var(--font); font-weight: 800; font-size: 18px;
   text-decoration: none; color: var(--color-text);
 }
-.detail a { font-family: var(--font-latin); }
+.detail a { font-family: var(--font-latin); display: inline-flex; align-items: center; min-height: 28px; }
+.details address { font-style: normal; display: contents; }
 .brief {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
@@ -312,4 +345,4 @@ figure { margin: 0; }
   font-size: 13px; line-height: 1.6; color: var(--text-70);
 }
 .footer .brand { font-family: var(--font-latin); font-weight: 800; color: var(--color-text); }
-.footer .legal { max-width: 70ch; }
+.footer .legal { max-width: 70ch; font-style: normal; }

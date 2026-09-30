@@ -12,11 +12,52 @@
 <meta property="og:site_name" content="Sageway 세이지웨이">
 <meta property="og:url" content="https://jiholee-web.github.io/sageway-homepage/">
 <meta property="og:image" content="https://jiholee-web.github.io/sageway-homepage/images/sageway-hero.jpg">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1050">
+<meta property="og:image:alt" content="주문 상품을 포장하는 손">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sageway 세이지웨이 — 온라인 쇼핑몰 구축·운영, 판촉물·기념품 제작">
+<meta name="twitter:description" content="팔리는 매장을 만들고, 손에 남는 브랜드를 만듭니다. 국내·해외 온라인 쇼핑몰 구축·운영, 판촉물·기념품 기획 및 제작.">
+<meta name="twitter:image" content="https://jiholee-web.github.io/sageway-homepage/images/sageway-hero.jpg">
+<link rel="canonical" href="https://jiholee-web.github.io/sageway-homepage/">
 <meta name="theme-color" content="#f3f2f2">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='8' y='8' width='16' height='16' fill='%23ec3013'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&family=Noto+Sans+KR:wght@400;800&display=swap">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://jiholee-web.github.io/sageway-homepage/#business",
+  "name": "세이지웨이",
+  "alternateName": "Sageway",
+  "url": "https://jiholee-web.github.io/sageway-homepage/",
+  "image": "https://jiholee-web.github.io/sageway-homepage/images/sageway-hero.jpg",
+  "description": "국내·해외 온라인 쇼핑몰을 구축·운영하고, 판촉물과 기념품을 기획해 제작합니다.",
+  "email": "sageway9@gmail.com",
+  "founder": { "@type": "Person", "name": "주희수" },
+  "vatID": "862-81-03082",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "퇴계로 450, 5층 505-6호 (신당동, 신영빌딩)",
+    "addressLocality": "중구",
+    "addressRegion": "서울특별시",
+    "addressCountry": "KR"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "온라인 쇼핑몰 국내/해외 구축·운영" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "판촉물·기념품 기획 및 제작" } }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -28,7 +69,24 @@
   <a href="#faq">FAQ</a>
   <a href="#contact">문의</a>
   <a href="mailto:sageway9@gmail.com?subject=%5B%EC%84%B8%EC%9D%B4%EC%A7%80%EC%9B%A8%EC%9D%B4%5D%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%AC%B8%EC%9D%98" class="btn btn-primary">메일로 문의</a>
+  <details class="nav-menu">
+    <summary aria-label="메뉴 열기"><span class="bars" aria-hidden="true"></span>메뉴</summary>
+    <ul class="nav-menu-list">
+      <li><a href="#store">쇼핑몰</a></li>
+      <li><a href="#goods">판촉물·기념품</a></li>
+      <li><a href="#how">일하는 방식</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">문의</a></li>
+    </ul>
+  </details>
 </nav>
+<script>
+  // Progressive enhancement only: close the mobile menu after a link is tapped
+  // so the dropdown doesn't stay over the section it just scrolled to.
+  document.querySelectorAll('.nav-menu-list a').forEach(function (a) {
+    a.addEventListener('click', function () { a.closest('details').removeAttribute('open'); });
+  });
+</script>
 
 <main>
 <div class="container">
@@ -217,7 +275,7 @@
 <div class="container">
   <section class="details" aria-label="연락처">
     <div class="details-grid">
-      <div class="detail"><span class="eyebrow eyebrow--muted">이메일</span><a href="mailto:sageway9@gmail.com">sageway9@gmail.com</a></div>
+      <div class="detail"><span class="eyebrow eyebrow--muted">이메일</span><address><a href="mailto:sageway9@gmail.com">sageway9@gmail.com</a></address></div>
       <div class="detail"><span class="eyebrow eyebrow--muted">상담 시간</span><span class="value">평일 09:00–18:00</span></div>
       <div class="detail"><span class="eyebrow eyebrow--muted">회신</span><span class="value">영업일 기준 1일 안에</span></div>
     </div>
@@ -233,7 +291,7 @@
 <div class="container">
   <footer class="footer">
     <span class="brand">SAGEWAY 세이지웨이</span>
-    <span class="legal">대표 주희수 · 사업자등록번호 862-81-03082 · 서울특별시 중구 퇴계로 450, 5층 505-6호 (신당동, 신영빌딩) · © 2026 Sageway. All rights reserved.</span>
+    <address class="legal">대표 주희수 · 사업자등록번호 862-81-03082 · 서울특별시 중구 퇴계로 450, 5층 505-6호 (신당동, 신영빌딩) · © 2026 Sageway. All rights reserved.</address>
   </footer>
 </div>
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jiholee-web.github.io/sageway-homepage/sitemap.xml
